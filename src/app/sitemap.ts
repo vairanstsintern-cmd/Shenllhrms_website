@@ -26,13 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries/textile",
     "/industries/professional-services",
     "/pricing",
+    "/book-a-demo",
     "/resources",
     "/about",
+    "/cookie-policy",
     "/privacy-policy",
     "/terms-and-conditions",
   ];
 
-  const lastModified = "2026-10-30T12:00:00.000Z";
+  const lastModified = "2026-11-05T00:00:00.000Z";
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
