@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, ShieldCheck, HelpCircle } from "lucide-react";
 import DemoRequestForm from "@/components/DemoRequestForm";
+import FAQAccordionSection from "@/components/FAQAccordionSection";
 import { PRICING_PLANS } from "@/data/navigation";
 
 export const metadata: Metadata = {
@@ -49,7 +50,6 @@ export default function PricingPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="ron-badge-lime">
-            <span className="w-2 h-2 rounded-full bg-[#0E151B]" />
             Transparent Commercials
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#0E151B] mt-5 tracking-tight leading-[1.08]">
@@ -82,7 +82,7 @@ export default function PricingPage() {
                 key={plan.id}
                 className={`ron-card p-8 sm:p-10 flex flex-col justify-between transition-all duration-300 relative ${
                   plan.highlight
-                    ? "border-2 border-[#0E151B] shadow-[0_25px_60px_-15px_rgba(14,21,27,0.18)] ring-4 ring-[#9DF52A]/30 bg-white"
+                    ? "border-2 border-[#0E151B] shadow-[0_25px_60px_-15px_rgba(14,21,27,0.18)] ring-4 ring-[#087E8B]/20 bg-white"
                     : "border-slate-200/90 bg-[#F8FAFA]"
                 }`}
               >
@@ -90,7 +90,6 @@ export default function PricingPage() {
                   {plan.highlight && (
                     <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
                       <span className="ron-badge-lime shadow-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0E151B]" />
                         {plan.badge}
                       </span>
                     </div>
@@ -145,7 +144,7 @@ export default function PricingPage() {
                   href="#contact-form"
                   className={`w-full py-4 px-6 rounded-full font-bold text-center text-sm transition-all duration-200 micro-btn-interactive ${
                     plan.highlight
-                      ? "bg-[#0E151B] hover:bg-black text-[#9DF52A] shadow-md"
+                      ? "bg-[#0E151B] hover:bg-black text-[#19B5A5] shadow-md"
                       : "bg-[#EEF3F2] hover:bg-[#E2EAE8] text-[#0E151B]"
                   }`}
                 >
@@ -176,7 +175,7 @@ export default function PricingPage() {
                   <tr className="bg-[#0E151B] text-white">
                     <th className="py-4 px-6 font-bold">Module / Feature</th>
                     <th className="py-4 px-4 font-bold text-center">Basic (₹12k/mo)</th>
-                    <th className="py-4 px-4 font-bold text-center text-[#9DF52A]">Professional (₹25k/mo)</th>
+                    <th className="py-4 px-4 font-bold text-center text-[#19B5A5]">Professional (₹25k/mo)</th>
                     <th className="py-4 px-4 font-bold text-center">Enterprise</th>
                   </tr>
                 </thead>
@@ -226,45 +225,30 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 4. Pricing FAQs */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEF3F2] text-[#0E151B] text-[11px] font-bold uppercase tracking-wider">
-              Commercial Terms
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-[#0E151B] mt-3 tracking-tight">
-              Frequently Asked Pricing Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              {
-                q: "What constitutes an 'active employee' for billing?",
-                a: "An active employee is any individual who is currently marked as active on your muster roll during that billing month and has access to attendance logging, self-service, or payslip generation. Exited or resigned employees stored in historical records are not billed.",
-              },
-              {
-                q: "What happens if our headcount exceeds the plan limit during a month?",
-                a: "If your active headcount exceeds the included limit (e.g., 105 employees on the Basic Plan), additional employees are billed at ₹100 per employee per month with zero disruption to your account operations.",
-              },
-              {
-                q: "Are there any one-time implementation or onboarding fees?",
-                a: "No. Standard cloud onboarding, employee master data import, and basic admin training are included at zero extra cost in our subscription plans.",
-              },
-              {
-                q: "Can we switch between Basic, Professional, and Enterprise plans later?",
-                a: "Yes. You can upgrade or downgrade your plan at any billing renewal cycle as your team size and operational needs expand.",
-              },
-            ].map((faq, i) => (
-              <div key={i} className="ron-card p-6 sm:p-7">
-                <h3 className="font-bold text-sm sm:text-base text-[#0E151B]">{faq.q}</h3>
-                <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. Pricing FAQs / Commercial Terms — Standardized Industry Q&A 2-Column Accordion Style */}
+      <FAQAccordionSection
+        badge="Commercial Terms"
+        heading="Frequently asked questions"
+        description="Everything you need to know about our active employee billing, onboarding commitments, plan upgrades, and transparent contracts."
+        faqs={[
+          {
+            question: "What constitutes an 'active employee' for billing?",
+            answer: "An active employee is any individual who is currently marked as active on your muster roll during that billing month and has access to attendance logging, self-service, or payslip generation. Exited or resigned employees stored in historical records are not billed.",
+          },
+          {
+            question: "What happens if our headcount exceeds the plan limit during a month?",
+            answer: "If your active headcount exceeds the included limit (e.g., 105 employees on the Basic Plan), additional employees are billed at ₹100 per employee per month with zero disruption to your account operations.",
+          },
+          {
+            question: "Are there any one-time implementation or onboarding fees?",
+            answer: "No. Standard cloud onboarding, employee master data import, and basic admin training are included at zero extra cost in our subscription plans.",
+          },
+          {
+            question: "Can we switch between Basic, Professional, and Enterprise plans later?",
+            answer: "Yes. You can upgrade or downgrade your plan at any billing renewal cycle as your team size and operational needs expand.",
+          },
+        ]}
+      />
 
       {/* 5. Conversion Section */}
       <section id="contact-form" className="py-24 bg-[#0E151B] text-white relative overflow-hidden">
@@ -284,15 +268,15 @@ export default function PricingPage() {
               </p>
               <div className="pt-2 text-xs text-slate-300 space-y-2.5">
                 <p className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#9DF52A]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#19B5A5]" />
                   No locked-in long-term multi-year contracts
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#9DF52A]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#19B5A5]" />
                   Monthly or discounted annual billing options
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#9DF52A]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#19B5A5]" />
                   Direct billing helpline: +91-8122046761
                 </p>
               </div>

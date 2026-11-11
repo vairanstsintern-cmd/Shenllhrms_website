@@ -132,8 +132,7 @@ export default function DemoRequestForm({
     <div className="ron-card p-6 sm:p-10 shadow-[0_25px_60px_-15px_rgba(14,21,27,0.12)] border border-slate-200/90 relative overflow-hidden bg-white">
       {/* Top Header Badge */}
       <div className="mb-7 text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EEF3F2] text-[#0E151B] text-[11px] font-bold uppercase tracking-wider mb-2">
-          <span className="w-2 h-2 rounded-full bg-[#9DF52A]"></span>
+        <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#EEF3F2] text-[#0E151B] text-[11px] font-bold uppercase tracking-wider mb-2">
           <span>Fast-Track Onboarding</span>
         </div>
         <h3 className="text-2xl sm:text-3xl font-black text-[#0E151B] tracking-tight">
@@ -243,14 +242,13 @@ export default function DemoRequestForm({
                   type="button"
                   key={mod.id}
                   onClick={() => handleModuleToggle(mod.id)}
-                  className={`flex items-center justify-between p-2.5 rounded-full px-4 text-left text-xs font-bold border transition-all cursor-pointer ${
-                    isSelected
-                      ? "bg-[#0E151B] text-white border-[#0E151B] shadow-sm"
-                      : "bg-[#F1F5F4] text-slate-700 border-transparent hover:bg-slate-200"
-                  }`}
+                  className={`flex items-center justify-between p-2.5 rounded-full px-4 text-left text-xs font-bold border transition-all cursor-pointer ${isSelected
+                    ? "bg-[#0E151B] text-white border-[#0E151B] shadow-sm"
+                    : "bg-[#F1F5F4] text-slate-700 border-transparent hover:bg-slate-200"
+                    }`}
                 >
                   <span className="truncate">{mod.label}</span>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-[#9DF52A]" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-[#19B5A5]" />}
                 </button>
               );
             })}

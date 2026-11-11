@@ -29,8 +29,7 @@ export default function Footer() {
         {/* Top Pre-Footer Banner Card — RonDesign Card */}
         <div className="mb-16 p-8 sm:p-12 rounded-[32px] bg-gradient-to-r from-[#121A21] via-[#16232D] to-[#0E151B] border border-slate-800 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/20 border border-[#087E8B]/40 text-xs font-semibold text-[#19B5A5] mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#19B5A5] animate-pulse"></span>
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#087E8B]/20 border border-[#087E8B]/40 text-xs font-semibold text-[#19B5A5] mb-3">
               Fast-Track Implementation
             </div>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
@@ -124,7 +123,7 @@ export default function Footer() {
               </p>
               <div className="flex items-center gap-2.5">
                 <a
-                  href="https://www.linkedin.com/company/shenll-technology-solutions"
+                  href="https://www.linkedin.com/company/shenll-hrms/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Shenll HRMS on LinkedIn"
@@ -160,7 +159,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://x.com/shenll"
+                  href="https://x.com/shenllhrms"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Shenll HRMS on X / Twitter"
@@ -172,7 +171,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/shenll"
+                  href="https://www.facebook.com/shenllhrms"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Shenll HRMS on Facebook"

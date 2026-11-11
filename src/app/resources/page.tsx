@@ -63,7 +63,6 @@ export default function ResourcesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="ron-badge-lime">
-            <span className="w-2 h-2 rounded-full bg-[#087E8B]" />
             Knowledge Hub &amp; Compliance Guides
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#0E151B] mt-5 tracking-tight leading-[1.08]">

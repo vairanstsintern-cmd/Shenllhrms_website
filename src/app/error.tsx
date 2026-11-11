@@ -28,7 +28,6 @@ export default function Error({
       {/* Badge */}
       <div className="relative z-10 mb-6">
         <span className="ron-badge-orange">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C43A00] animate-pulse" />
           HTTP Error 500 — Internal Server Error
         </span>
       </div>

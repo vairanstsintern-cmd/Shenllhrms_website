@@ -28,7 +28,6 @@ export default function BookADemoPage() {
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex mb-3">
             <span className="ron-badge-lime">
-              <span className="w-2 h-2 rounded-full bg-[#087E8B]" />
               Tailored 1-on-1 Walkthrough
             </span>
           </div>
@@ -96,16 +95,16 @@ export default function BookADemoPage() {
             {/* Direct Helpline Card */}
             <div className="ron-card p-6 bg-[#0E151B] text-white shadow-xl flex items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#9DF52A]">Need Urgent Assistance?</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#19B5A5]">Need Urgent Assistance?</span>
                 <p className="text-sm font-bold text-white mt-0.5">Call our Chennai Implementation Desk</p>
                 <a
                   href="tel:+918122046761"
-                  className="text-lg font-black text-white hover:text-[#9DF52A] transition-colors block mt-1"
+                  className="text-lg font-black text-white hover:text-[#19B5A5] transition-colors block mt-1"
                 >
                   +91-8122046761
                 </a>
               </div>
-              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#9DF52A] shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-[#087E8B]/20 border border-[#087E8B]/40 flex items-center justify-center text-[#19B5A5] shrink-0">
                 <Phone className="w-6 h-6" />
               </div>
             </div>

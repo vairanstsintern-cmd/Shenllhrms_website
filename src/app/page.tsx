@@ -209,13 +209,13 @@ export default function HomePage() {
 
           {/* RonDesignLab Action Pills */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up delay-300">
-            <Link href="#contact-form" className="ron-pill-dark w-full sm:w-auto !py-3.5 !px-7 text-sm">
+            <Link href="#contact-form" className="ron-pill-dark w-full sm:w-auto !py-3.5 !px-7 text-sm justify-center group">
               <span>Get a Live Demo</span>
-              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
                 <ArrowRight className="w-3.5 h-3.5 text-white" />
               </div>
             </Link>
-            <Link href="/pricing" className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm bg-white border border-slate-200/80 shadow-xs">
+            <Link href="/pricing" className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm justify-center bg-white border border-slate-200/80 shadow-xs">
               <span>View Modular Pricing</span>
             </Link>
           </div>
@@ -723,7 +723,7 @@ export default function HomePage() {
               <Link
                 key={i}
                 href={module.href}
-                className="px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-bold text-slate-700 hover:bg-[#0E151B] hover:text-[#9DF52A] hover:border-[#0E151B] transition-all shadow-xs"
+                className="px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-bold text-slate-700 hover:bg-[#0E151B] hover:text-[#19B5A5] hover:border-[#0E151B] transition-all shadow-xs"
               >
                 {module.title}
               </Link>

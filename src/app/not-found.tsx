@@ -17,7 +17,6 @@ export default function NotFound() {
       {/* Error code badge */}
       <div className="relative z-10 mb-6">
         <span className="ron-badge-lime">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#087E8B] animate-pulse" />
           HTTP Error 404
         </span>
       </div>
