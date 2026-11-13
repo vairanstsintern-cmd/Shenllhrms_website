@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Cookie, X, Check, ShieldCheck, Sparkles } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 const COOKIE_STORAGE_KEY = "shenll_cookie_consent_v1";
 
@@ -76,7 +76,7 @@ export default function CookieConsentBanner() {
           <div className="flex items-center gap-3">
             {/* Theme Teal Circular Icon Badge */}
             <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-[#087E8B] to-[#041B26] border border-[#19B5A5]/40 flex items-center justify-center text-[#19B5A5] shadow-md shadow-[#04121A] shrink-0">
-              <Cookie className="w-5 h-5 text-[#19B5A5]" />
+              <MaterialIcon name="cookie" size={20} className="text-[#19B5A5]" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#19B5A5] animate-ping" />
             </div>
 
@@ -99,7 +99,7 @@ export default function CookieConsentBanner() {
             aria-label="Dismiss cookie notice"
             className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center transition-colors shrink-0"
           >
-            <X className="w-3.5 h-3.5" />
+            <MaterialIcon name="close" size={14} />
           </button>
         </div>
 
@@ -111,7 +111,7 @@ export default function CookieConsentBanner() {
         {/* Theme Transparency Pill & Policy Link */}
         <div className="relative z-10 flex items-center justify-between text-[11px] text-slate-300 mb-4 pb-3 border-b border-[#087E8B]/25">
           <div className="flex items-center gap-1.5 text-[#19B5A5] font-medium">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#19B5A5]" />
+            <MaterialIcon name="verified_user" size={14} className="text-[#19B5A5]" />
             <span>Zero ad tracking</span>
           </div>
           <Link
@@ -119,7 +119,7 @@ export default function CookieConsentBanner() {
             className="text-[#19B5A5] hover:text-teal-200 font-semibold underline underline-offset-2 transition-colors flex items-center gap-1"
           >
             <span>Read Policy</span>
-            <Sparkles className="w-3 h-3 text-[#19B5A5]" />
+            <MaterialIcon name="auto_awesome" size={13} className="text-[#19B5A5]" />
           </Link>
         </div>
 
@@ -130,7 +130,7 @@ export default function CookieConsentBanner() {
             onClick={handleAcceptAll}
             className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-4 rounded-full bg-gradient-to-r from-[#087E8B] to-[#19B5A5] hover:from-[#0a9aaa] hover:to-[#5EEAD4] text-[#081B26] text-xs font-black transition-all shadow-md shadow-[#087E8B]/30 hover:scale-[1.02]"
           >
-            <Check className="w-3.5 h-3.5 stroke-[3]" />
+            <MaterialIcon name="check" size={14} weight={300} />
             <span>Accept All</span>
           </button>
 

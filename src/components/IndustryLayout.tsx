@@ -1,33 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
-  ChevronRight,
-  Fingerprint,
-  Truck,
-  Warehouse,
-  HardHat,
-  Wrench,
-  GraduationCap,
-  Laptop,
-  Timer,
-  Calculator,
-  Wallet,
-  Receipt,
-  Clock,
-  Calendar,
-  Users,
-  Coins,
-  AlertTriangle,
-  Sparkles,
-  Check,
-  Scale,
-  FileCheck,
-  BadgeCheck,
-} from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import DemoRequestForm from "@/components/DemoRequestForm";
 import FAQAccordionSection from "@/components/FAQAccordionSection";
 
@@ -63,7 +37,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-rose-200/70",
       textColor: "text-rose-700",
       hoverBg: "group-hover:from-rose-600 group-hover:to-amber-500",
-      icon: <Fingerprint className="w-6 h-6" />,
+      icon: <MaterialIcon name="fingerprint" size={30} />,
     };
   }
   if (t.includes("driver") || t.includes("truck") || t.includes("haul")) {
@@ -72,7 +46,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-blue-200/70",
       textColor: "text-blue-700",
       hoverBg: "group-hover:from-blue-600 group-hover:to-teal-500",
-      icon: <Truck className="w-6 h-6" />,
+      icon: <MaterialIcon name="local_shipping" size={30} />,
     };
   }
   if (t.includes("warehouse") || t.includes("sorting hub")) {
@@ -81,7 +55,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-indigo-200/70",
       textColor: "text-indigo-700",
       hoverBg: "group-hover:from-indigo-600 group-hover:to-purple-500",
-      icon: <Warehouse className="w-6 h-6" />,
+      icon: <MaterialIcon name="warehouse" size={30} />,
     };
   }
   if (t.includes("remote site") || t.includes("multi-site") || t.includes("site attendance") || t.includes("construction") || t.includes("site labor")) {
@@ -90,7 +64,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-amber-200/70",
       textColor: "text-amber-800",
       hoverBg: "group-hover:from-amber-600 group-hover:to-orange-500",
-      icon: <HardHat className="w-6 h-6" />,
+      icon: <MaterialIcon name="construction" size={30} />,
     };
   }
   if (t.includes("skill tracking") || t.includes("engineering skill")) {
@@ -99,7 +73,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-cyan-200/70",
       textColor: "text-cyan-800",
       hoverBg: "group-hover:from-cyan-600 group-hover:to-teal-500",
-      icon: <Wrench className="w-6 h-6" />,
+      icon: <MaterialIcon name="build" size={30} />,
     };
   }
   if (t.includes("faculty") || t.includes("lecture") || t.includes("academic") || t.includes("student")) {
@@ -108,7 +82,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-purple-200/70",
       textColor: "text-purple-700",
       hoverBg: "group-hover:from-purple-600 group-hover:to-pink-500",
-      icon: <GraduationCap className="w-6 h-6" />,
+      icon: <MaterialIcon name="school" size={30} />,
     };
   }
   if (t.includes("laptop") || t.includes("remote attendance") || t.includes("hybrid")) {
@@ -117,7 +91,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-sky-200/70",
       textColor: "text-sky-700",
       hoverBg: "group-hover:from-sky-600 group-hover:to-blue-500",
-      icon: <Laptop className="w-6 h-6" />,
+      icon: <MaterialIcon name="laptop_mac" size={30} />,
     };
   }
   if (t.includes("timesheet") || t.includes("billab") || t.includes("hours")) {
@@ -126,7 +100,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-orange-200/70",
       textColor: "text-orange-700",
       hoverBg: "group-hover:from-orange-600 group-hover:to-rose-500",
-      icon: <Timer className="w-6 h-6" />,
+      icon: <MaterialIcon name="timer" size={30} />,
     };
   }
   if (t.includes("piece-rate") || t.includes("overtime") || t.includes("formula")) {
@@ -135,7 +109,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-emerald-200/70",
       textColor: "text-emerald-700",
       hoverBg: "group-hover:from-emerald-600 group-hover:to-teal-500",
-      icon: <Calculator className="w-6 h-6" />,
+      icon: <MaterialIcon name="calculate" size={30} />,
     };
   }
   if (t.includes("ghost worker") || t.includes("dispute")) {
@@ -144,7 +118,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-rose-200/70",
       textColor: "text-rose-700",
       hoverBg: "group-hover:from-rose-600 group-hover:to-red-500",
-      icon: <AlertTriangle className="w-6 h-6" />,
+      icon: <MaterialIcon name="warning" size={30} />,
     };
   }
   if (t.includes("payroll") || t.includes("deputation") || t.includes("allowance") || t.includes("cash wage") || t.includes("wage")) {
@@ -153,7 +127,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-teal-200/70",
       textColor: "text-[#087E8B]",
       hoverBg: "group-hover:from-[#087E8B] group-hover:to-[#19B5A5]",
-      icon: <Wallet className="w-6 h-6" />,
+      icon: <MaterialIcon name="payments" size={30} />,
     };
   }
   if (t.includes("expense") || t.includes("claim") || t.includes("trip bata")) {
@@ -162,7 +136,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-amber-200/70",
       textColor: "text-amber-700",
       hoverBg: "group-hover:from-amber-600 group-hover:to-yellow-500",
-      icon: <Receipt className="w-6 h-6" />,
+      icon: <MaterialIcon name="receipt_long" size={30} />,
     };
   }
   if (t.includes("roster") || t.includes("shift") || t.includes("nursing") || t.includes("rotational")) {
@@ -171,7 +145,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-blue-200/70",
       textColor: "text-blue-700",
       hoverBg: "group-hover:from-blue-600 group-hover:to-indigo-500",
-      icon: <Clock className="w-6 h-6" />,
+      icon: <MaterialIcon name="schedule" size={30} />,
     };
   }
   if (t.includes("vacation") || t.includes("leave")) {
@@ -180,7 +154,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-cyan-200/70",
       textColor: "text-cyan-700",
       hoverBg: "group-hover:from-cyan-600 group-hover:to-blue-500",
-      icon: <Calendar className="w-6 h-6" />,
+      icon: <MaterialIcon name="calendar_month" size={30} />,
     };
   }
   if (t.includes("churn") || t.includes("attrition") || t.includes("poaching") || t.includes("hostel")) {
@@ -189,7 +163,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-rose-200/70",
       textColor: "text-rose-700",
       hoverBg: "group-hover:from-rose-600 group-hover:to-pink-500",
-      icon: <Users className="w-6 h-6" />,
+      icon: <MaterialIcon name="group_remove" size={30} />,
     };
   }
   if (t.includes("audit") || t.includes("compliance") || t.includes("bocw") || t.includes("nabh") || t.includes("accreditation")) {
@@ -198,7 +172,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-teal-200/70",
       textColor: "text-teal-700",
       hoverBg: "group-hover:from-teal-600 group-hover:to-emerald-500",
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: <MaterialIcon name="verified_user" size={30} />,
     };
   }
   if (t.includes("margin") || t.includes("cost") || t.includes("visibility")) {
@@ -207,7 +181,7 @@ function getChallengeIconMeta(challenge: string) {
       border: "border-amber-200/70",
       textColor: "text-amber-700",
       hoverBg: "group-hover:from-amber-600 group-hover:to-emerald-500",
-      icon: <Coins className="w-6 h-6" />,
+      icon: <MaterialIcon name="paid" size={30} />,
     };
   }
 
@@ -217,7 +191,7 @@ function getChallengeIconMeta(challenge: string) {
     border: "border-rose-200/70",
     textColor: "text-rose-700",
     hoverBg: "group-hover:from-rose-600 group-hover:to-amber-500",
-    icon: <AlertTriangle className="w-6 h-6" />,
+    icon: <MaterialIcon name="report_problem" size={30} />,
   };
 }
 
@@ -262,7 +236,7 @@ export default function IndustryLayout({
                 >
                   <span>Request {industryName} Demo</span>
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-                    <ArrowRight className="w-3.5 h-3.5 text-white" />
+                    <MaterialIcon name="arrow_forward" size={14} className="text-white" />
                   </div>
                 </Link>
                 <Link
@@ -275,14 +249,14 @@ export default function IndustryLayout({
 
               {/* Trust highlights checklist */}
               <div className="pt-3 flex flex-wrap items-center gap-6 text-xs text-slate-500 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#087E8B]" /> 100% Cloud-Based
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="cloud_done" size={22} className="text-[#087E8B]" /> 100% Cloud-Based
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#087E8B]" /> Mobile App & Biometrics
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="fingerprint" size={22} className="text-[#087E8B]" /> Mobile App & Biometrics
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#087E8B]" /> Statutory Compliant
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="verified_user" size={22} className="text-[#087E8B]" /> Statutory Compliant
                 </span>
               </div>
             </div>
@@ -401,7 +375,7 @@ export default function IndustryLayout({
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-1.5">
                           <div className="w-5 h-5 rounded-full bg-[#087E8B]/10 flex items-center justify-center flex-shrink-0">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#087E8B]" />
+                            <MaterialIcon name="check_circle" size={15} fill className="text-[#087E8B]" />
                           </div>
                           <span className="text-[11px] font-extrabold text-[#087E8B] uppercase tracking-wider">
                             Shenll Solution
@@ -671,7 +645,6 @@ export default function IndustryLayout({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="ron-badge-lime mb-3">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#087E8B]" />
               Statutory Safeguards
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#0E151B] tracking-tight leading-tight">
@@ -685,20 +658,20 @@ export default function IndustryLayout({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {complianceHighlights.map((comp, cIdx) => {
               const lower = comp.toLowerCase();
-              let icon = <ShieldCheck className="w-6 h-6" />;
+              let icon = <MaterialIcon name="security" size={30} />;
               let gradient = "from-[#087E8B]/10 via-[#19B5A5]/15 to-emerald-50/50";
               let badgeText = "Statutory Law";
 
               if (lower.includes("act") || lower.includes("law") || lower.includes("court") || lower.includes("legal")) {
-                icon = <Scale className="w-6 h-6" />;
+                icon = <MaterialIcon name="gavel" size={30} />;
                 gradient = "from-amber-500/10 via-yellow-500/15 to-amber-50/50";
                 badgeText = "Legal Mandate";
               } else if (lower.includes("audit") || lower.includes("wrap") || lower.includes("smeta") || lower.includes("bsci") || lower.includes("nabh") || lower.includes("naac")) {
-                icon = <BadgeCheck className="w-6 h-6" />;
+                icon = <MaterialIcon name="verified" size={30} />;
                 gradient = "from-purple-500/10 via-indigo-500/15 to-purple-50/50";
                 badgeText = "Audit Standard";
               } else if (lower.includes("register") || lower.includes("report") || lower.includes("form") || lower.includes("documentation") || lower.includes("calculation") || lower.includes("pf") || lower.includes("esi")) {
-                icon = <FileCheck className="w-6 h-6" />;
+                icon = <MaterialIcon name="fact_check" size={30} />;
                 gradient = "from-teal-500/10 via-cyan-500/15 to-teal-50/50";
                 badgeText = "Auto-Register";
               }
@@ -749,8 +722,8 @@ export default function IndustryLayout({
 
                   {/* Bottom Verification Footer */}
                   <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="flex items-center gap-1.5 font-medium text-slate-600">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#087E8B]" />
+                    <span className="flex items-center gap-2 font-medium text-slate-600">
+                      <MaterialIcon name="check_circle" size={18} fill className="text-[#087E8B]" />
                       100% Audit Guaranteed
                     </span>
                     <span className="text-[11px] font-semibold text-[#087E8B] uppercase tracking-wider">
@@ -769,8 +742,8 @@ export default function IndustryLayout({
           <div className="mt-10 rounded-[24px] sm:rounded-[28px] bg-gradient-to-r from-[#0E151B] to-[#123B50] p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden border border-slate-800">
             <div className="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-[#19B5A5]/20 to-transparent pointer-events-none" />
             <div className="flex items-center gap-4 relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center flex-shrink-0 text-[#19B5A5]">
-                <ShieldCheck className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center flex-shrink-0 text-[#19B5A5]">
+                <MaterialIcon name="verified_user" size={32} />
               </div>
               <div>
                 <h4 className="font-bold text-base sm:text-lg text-white">
@@ -787,7 +760,7 @@ export default function IndustryLayout({
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#19B5A5] text-[#0E151B] text-xs font-bold hover:bg-white transition-all shadow-sm"
               >
                 <span>Request Compliance Audit</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <MaterialIcon name="arrow_forward" size={14} />
               </Link>
             </div>
           </div>
@@ -805,7 +778,7 @@ export default function IndustryLayout({
       {/* 6. Lead Capture */}
       <section id="demo-form" className="py-24 bg-[#0E151B] text-white relative overflow-hidden">
         {/* Subtle mesh background accent */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#9DF52A]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#19B5A5]/15 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">

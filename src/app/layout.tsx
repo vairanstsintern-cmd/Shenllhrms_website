@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import "material-symbols/index.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +8,12 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import FloatingAIChatbot from "@/components/FloatingAIChatbot";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
+export const viewport: Viewport = {
+  themeColor: "#087E8B",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shenllhrms.com"),
@@ -118,6 +125,31 @@ export default function RootLayout({
     },
   };
 
+  const jsonLdSoftwareApp = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Shenll HRMS",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web, iOS, Android",
+    url: "https://shenllhrms.com",
+    description: "Enterprise HR, statutory payroll automation, biometric punch sync, and AI workforce planning platform.",
+    offers: {
+      "@type": "Offer",
+      price: "100.00",
+      priceCurrency: "INR",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "99",
+    },
+    author: {
+      "@id": "https://shenllhrms.com/#organization",
+    },
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -127,6 +159,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
@@ -134,6 +170,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftwareApp) }}
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#F0F4F8] text-[#334155] antialiased" suppressHydrationWarning>

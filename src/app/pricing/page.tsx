@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, ShieldCheck, HelpCircle } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import DemoRequestForm from "@/components/DemoRequestForm";
 import FAQAccordionSection from "@/components/FAQAccordionSection";
 import { PRICING_PLANS } from "@/data/navigation";
@@ -60,14 +60,14 @@ export default function PricingPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-600 font-semibold">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Free Assisted Data Migration
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs">
+              Free Assisted Data Migration
             </span>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Verified Indian Statutory Compliance
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs">
+              Verified Indian Statutory Compliance
             </span>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Web & Mobile Apps Included
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs">
+              Web &amp; Mobile Apps Included
             </span>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function PricingPage() {
                     </p>
                     {plan.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <MaterialIcon name="check_circle" size={17} fill className="text-emerald-600 flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -186,7 +186,7 @@ export default function PricingPage() {
                       <td className="py-3.5 px-4 text-center">
                         {typeof row.basic === "boolean" ? (
                           row.basic ? (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 mx-auto" />
+                            <MaterialIcon name="check_circle" size={18} fill className="text-emerald-600 mx-auto" />
                           ) : (
                             <span className="text-slate-300 font-bold">—</span>
                           )
@@ -194,10 +194,10 @@ export default function PricingPage() {
                           <span className="font-semibold text-xs text-slate-700">{row.basic}</span>
                         )}
                       </td>
-                      <td className="py-3.5 px-4 text-center bg-[#9DF52A]/5">
+                      <td className="py-3.5 px-4 text-center bg-[#087E8B]/[0.04]">
                         {typeof row.pro === "boolean" ? (
                           row.pro ? (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 mx-auto" />
+                            <MaterialIcon name="check_circle" size={18} fill className="text-emerald-600 mx-auto" />
                           ) : (
                             <span className="text-slate-300 font-bold">—</span>
                           )
@@ -208,7 +208,7 @@ export default function PricingPage() {
                       <td className="py-3.5 px-4 text-center">
                         {typeof row.ent === "boolean" ? (
                           row.ent ? (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 mx-auto" />
+                            <MaterialIcon name="check_circle" size={18} fill className="text-emerald-600 mx-auto" />
                           ) : (
                             <span className="text-slate-300 font-bold">—</span>
                           )
@@ -253,7 +253,7 @@ export default function PricingPage() {
       {/* 5. Conversion Section */}
       <section id="contact-form" className="py-24 bg-[#0E151B] text-white relative overflow-hidden">
         {/* Subtle mesh background accent */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#9DF52A]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#19B5A5]/15 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">

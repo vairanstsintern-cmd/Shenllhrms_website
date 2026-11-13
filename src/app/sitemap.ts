@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/performance-management-software",
     "/project-management",
     "/expense-management",
+    "/resume-builder",
     "/ai-hrms",
     "/hrms-mobile-app",
     "/industries/manufacturing",
@@ -34,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-and-conditions",
   ];
 
-  const lastModified = "2026-11-05T00:00:00.000Z";
+  const lastModified = new Date().toISOString();
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

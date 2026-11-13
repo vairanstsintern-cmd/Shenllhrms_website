@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { AlertTriangle, RefreshCw, Home, Mail, ArrowRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export default function Error({
   error,
@@ -34,7 +34,7 @@ export default function Error({
 
       {/* Icon */}
       <div className="relative z-10 w-20 h-20 rounded-[22px] bg-[#0E151B] flex items-center justify-center mb-6 shadow-[0_12px_30px_-8px_rgba(14,21,27,0.25)] border border-slate-700/40">
-        <AlertTriangle className="w-9 h-9 text-[#FF6B35]" />
+        <MaterialIcon name="warning" size={36} className="text-[#FF6B35]" />
       </div>
 
       {/* Heading */}
@@ -59,24 +59,24 @@ export default function Error({
           onClick={retry}
           className="ron-pill-dark w-full sm:w-auto !py-3.5 !px-7 text-sm justify-center group cursor-pointer"
         >
-          <RefreshCw className="w-4 h-4 text-white" />
+          <MaterialIcon name="refresh" size={16} className="text-white" />
           <span>Try Again</span>
           <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-45">
-            <ArrowRight className="w-3.5 h-3.5 text-white" />
+            <MaterialIcon name="arrow_forward" size={14} className="text-white" />
           </div>
         </button>
         <Link
           href="/"
           className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm justify-center bg-white border border-slate-200/80 shadow-xs"
         >
-          <Home className="w-4 h-4 text-[#087E8B]" />
+          <MaterialIcon name="home" size={16} className="text-[#087E8B]" />
           <span>Return Home</span>
         </Link>
         <a
           href="mailto:info@shenllhrms.com"
           className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm justify-center bg-white border border-slate-200/80 shadow-xs"
         >
-          <Mail className="w-4 h-4 text-[#087E8B]" />
+          <MaterialIcon name="mail" size={16} className="text-[#087E8B]" />
           <span>Contact Support</span>
         </a>
       </div>

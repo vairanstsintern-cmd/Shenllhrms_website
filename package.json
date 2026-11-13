@@ -12,6 +12,7 @@
     "framer-motion": "^14.8.0",
     "hugeicons-react": "^0.4.0",
     "lucide-react": "^1.65.0",
+    "material-symbols": "^0.48.3",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0"

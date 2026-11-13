@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, FileText, Calculator, Award, ArrowRight, CheckCircle2, ShieldCheck, Download, ChevronRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import DemoRequestForm from "@/components/DemoRequestForm";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
       description: "Comprehensive breakdown of Employee Provident Fund (EPF), ESI contribution limits, state-by-state Professional Tax (PT), and Gratuity formulas.",
       tags: ["PF & ESI", "Labor Law", "Tax Regimes"],
       id: "compliance",
-      icon: ShieldCheck,
+      icon: "verified_user",
     },
     {
       title: "Biometric Attendance & Shift Rostering Best Practices",
@@ -34,7 +34,7 @@ export default function ResourcesPage() {
       description: "How modern factories and multi-shift companies eliminate buddy punching, handle rotational night shifts, and integrate turnstile hardware.",
       tags: ["Biometrics", "Shifts", "Factories Act"],
       id: "guides",
-      icon: BookOpen,
+      icon: "menu_book",
     },
     {
       title: "HR Automation ROI Calculator & Template",
@@ -42,7 +42,7 @@ export default function ResourcesPage() {
       description: "Estimate monthly hours saved across payroll processing, leave reconciliation, and employee record administration for your specific company size.",
       tags: ["ROI Calculator", "Cost Optimization"],
       id: "roi-calculator",
-      icon: Calculator,
+      icon: "calculate",
     },
     {
       title: "Modern OKR vs Traditional KPI Playbook",
@@ -50,7 +50,7 @@ export default function ResourcesPage() {
       description: "Step-by-step framework for setting quarterly engineering, sales, and operations OKRs with continuous 360-degree feedback reviews.",
       tags: ["OKRs", "Appraisals", "360 Reviews"],
       id: "performance",
-      icon: Award,
+      icon: "military_tech",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function ResourcesPage() {
             >
               <span>View Statutory Cheat Sheet</span>
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <MaterialIcon name="arrow_forward" size={14} className="text-white" />
               </div>
             </Link>
             <Link
@@ -106,7 +106,6 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {resourceCategories.map((res, idx) => {
-              const IconComp = res.icon;
               return (
                 <div
                   key={idx}
@@ -119,7 +118,7 @@ export default function ResourcesPage() {
                         {res.category}
                       </span>
                       <div className="w-10 h-10 rounded-2xl bg-[#EEF3F2] text-[#087E8B] flex items-center justify-center">
-                        <IconComp className="w-5 h-5" />
+                        <MaterialIcon name={res.icon} size={20} />
                       </div>
                     </div>
                     <h3 className="text-xl font-bold text-[#0E151B] mb-2.5 group-hover:text-[#087E8B] transition-colors">
@@ -142,7 +141,7 @@ export default function ResourcesPage() {
                     className="ron-pill-light w-full sm:w-auto text-xs justify-between group-hover:bg-[#0E151B] group-hover:text-white transition-all"
                   >
                     <span>Request Full Resource Pack / Demo</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <MaterialIcon name="arrow_forward" size={14} />
                   </Link>
                 </div>
               );
@@ -156,7 +155,6 @@ export default function ResourcesPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="ron-badge-lime">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#087E8B]" />
               Quick Reference
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-[#0E151B] mt-3 tracking-tight">

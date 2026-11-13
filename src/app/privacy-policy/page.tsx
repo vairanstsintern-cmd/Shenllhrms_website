@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Mail, Phone, MapPin, ArrowRight, Lock, Eye, CheckCircle2 } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Shenll HRMS | Enterprise Data Protection",
@@ -25,7 +25,6 @@ export default function PrivacyPolicyPage() {
         <div className="text-center mb-12">
           <div className="inline-flex mb-3">
             <span className="ron-badge-lime">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#087E8B]" />
               Enterprise Data Safeguards
             </span>
           </div>
@@ -42,7 +41,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <ShieldCheck className="w-4 h-4" />
+                <MaterialIcon name="verified_user" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">1. Introduction &amp; Scope</h2>
             </div>
@@ -54,7 +53,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <Eye className="w-4 h-4" />
+                <MaterialIcon name="visibility" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">2. Information We Process</h2>
             </div>
@@ -66,7 +65,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <MapPin className="w-4 h-4" />
+                <MaterialIcon name="location_on" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">3. Mobile App Location Data &amp; Geo-Fencing</h2>
             </div>
@@ -78,7 +77,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <Lock className="w-4 h-4" />
+                <MaterialIcon name="lock" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">4. Security, Encryption &amp; Storage</h2>
             </div>
@@ -90,7 +89,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <Mail className="w-4 h-4" />
+                <MaterialIcon name="mail" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">5. Grievance Redressal &amp; Contact</h2>
             </div>

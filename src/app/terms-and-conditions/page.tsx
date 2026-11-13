@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions — Shenll HRMS | Subscription & SLA Agreement",
@@ -25,7 +25,6 @@ export default function TermsPage() {
         <div className="text-center mb-12">
           <div className="inline-flex mb-3">
             <span className="ron-badge-lime">
-              <FileText className="w-3.5 h-3.5 text-[#087E8B]" />
               Commercial &amp; Subscription Terms
             </span>
           </div>
@@ -42,7 +41,7 @@ export default function TermsPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <FileText className="w-4 h-4" />
+                <MaterialIcon name="description" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">1. Agreement to Terms</h2>
             </div>
@@ -54,7 +53,7 @@ export default function TermsPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <CheckCircle2 className="w-4 h-4" />
+                <MaterialIcon name="check_circle" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">2. Commercial Plans &amp; Active Headcount Billing</h2>
             </div>
@@ -80,7 +79,7 @@ export default function TermsPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <ShieldCheck className="w-4 h-4" />
+                <MaterialIcon name="verified_user" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">3. Customer Obligations &amp; Data Accuracy</h2>
             </div>
@@ -92,7 +91,7 @@ export default function TermsPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <FileText className="w-4 h-4" />
+                <MaterialIcon name="description" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">4. Service Level Agreement (SLA) &amp; Support</h2>
             </div>

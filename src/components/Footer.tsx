@@ -3,18 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ExternalLink,
-  ShieldCheck,
-  CheckCircle,
-  Sparkles,
-  ArrowRight,
-  ChevronRight,
-  Heart,
-} from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
+import { GooglePlayIcon, AppleIcon, WhatsAppIcon } from "@/components/BrandIcons";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -47,7 +37,7 @@ export default function Footer() {
             >
               <span>Book a Live Demo</span>
               <div className="w-5 h-5 rounded-full bg-[#0E151B] text-white flex items-center justify-center">
-                <ArrowRight className="w-3 h-3" />
+                <MaterialIcon name="arrow_forward" size={12} />
               </div>
             </Link>
           </div>
@@ -81,15 +71,10 @@ export default function Footer() {
                   href="https://play.google.com/store/apps/details?id=com.sts.stshrms&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-slate-700 rounded-2xl px-4 py-2.5 text-xs font-semibold text-white transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-slate-700 rounded-2xl px-4 py-2.5 text-xs font-semibold text-white transition-all hover:-translate-y-0.5 group"
+                  aria-label="Get it on Google Play"
                 >
-                  <Image
-                    src="/google-play-brand.svg"
-                    alt="Google Play"
-                    width={18}
-                    height={18}
-                    className="object-contain"
-                  />
+                  <GooglePlayIcon size={20} className="group-hover:scale-110 transition-transform" />
                   <div className="text-left">
                     <p className="text-[9px] uppercase text-slate-400 leading-none">GET IT ON</p>
                     <p className="text-xs font-bold leading-tight mt-0.5">Google Play</p>
@@ -99,15 +84,10 @@ export default function Footer() {
                   href="https://apps.apple.com/ie/app/shenll-hrms/id6757430801"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-slate-700 rounded-2xl px-4 py-2.5 text-xs font-semibold text-white transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-slate-700 rounded-2xl px-4 py-2.5 text-xs font-semibold text-white transition-all hover:-translate-y-0.5 group"
+                  aria-label="Download on the App Store"
                 >
-                  <Image
-                    src="/apple-brand.svg"
-                    alt="Apple App Store"
-                    width={18}
-                    height={18}
-                    className="brightness-0 invert object-contain"
-                  />
+                  <AppleIcon size={20} className="text-white group-hover:scale-110 transition-transform" />
                   <div className="text-left">
                     <p className="text-[9px] uppercase text-slate-400 leading-none">Download on</p>
                     <p className="text-xs font-bold leading-tight mt-0.5">App Store</p>
@@ -168,6 +148,16 @@ export default function Footer() {
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
+                </a>
+
+                <a
+                  href="https://wa.me/918122046761?text=Hello%20Shenll%20HRMS,%20I%20have%20an%20inquiry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Shenll HRMS on WhatsApp"
+                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-[#25D366] border border-slate-800 hover:border-[#25D366] text-slate-400 hover:text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
+                >
+                  <WhatsAppIcon size={18} />
                 </a>
 
                 <a
@@ -232,8 +222,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/resume-builder" className="hover:text-white transition-colors flex items-center gap-1.5 group">
+                  <span className="group-hover:translate-x-1 transition-transform">Client Resume Builder</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/ai-hrms" className="text-[#19B5A5] font-bold hover:underline flex items-center gap-1.5 mt-2">
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <MaterialIcon name="auto_awesome" size={14} />
                   <span>AI Predictive Engine</span>
                 </Link>
               </li>
@@ -277,6 +272,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/industries/education" className="hover:text-white transition-colors flex items-center gap-1 group">
+                  <span className="group-hover:translate-x-1 transition-transform">Schools &amp; Universities</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/textile" className="hover:text-white transition-colors flex items-center gap-1 group">
+                  <span className="group-hover:translate-x-1 transition-transform">Textile &amp; Garments</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/industries/professional-services" className="hover:text-white transition-colors flex items-center gap-1 group">
                   <span className="group-hover:translate-x-1 transition-transform">Professional Services</span>
                 </Link>
@@ -291,21 +296,33 @@ export default function Footer() {
             </h4>
             <div className="space-y-3.5 text-xs text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#19B5A5] flex-shrink-0 mt-0.5" />
+                <MaterialIcon name="location_on" size={16} className="text-[#19B5A5] flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
                   Plot No.1069, Munusamy Salai, K.K Nagar, Chennai – 600 078, Tamil Nadu, India.
                 </p>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#19B5A5] flex-shrink-0" />
+                <MaterialIcon name="call" size={16} className="text-[#19B5A5] flex-shrink-0" />
                 <a href="tel:+918122046761" className="hover:text-white transition-colors font-bold text-slate-200">
                   +91-8122046761
                 </a>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#19B5A5] flex-shrink-0" />
+                <WhatsAppIcon size={16} />
+                <a
+                  href="https://wa.me/918122046761?text=Hello%20Shenll%20HRMS,%20I%20have%20an%20inquiry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors font-semibold text-slate-200"
+                >
+                  WhatsApp: +91-8122046761
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <MaterialIcon name="mail" size={16} className="text-[#19B5A5] flex-shrink-0" />
                 <a href="mailto:info@shenllhrms.com" className="hover:text-white transition-colors font-semibold text-slate-200">
                   info@shenllhrms.com
                 </a>

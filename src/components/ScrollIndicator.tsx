@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export default function ScrollIndicator() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -43,7 +43,7 @@ export default function ScrollIndicator() {
           aria-label="Scroll to top of page"
           title="Back to Top"
         >
-          <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+          <MaterialIcon name="expand_less" size={20} className="group-hover:-translate-y-0.5 transition-transform" />
         </button>
       )}
 
@@ -80,11 +80,11 @@ export default function ScrollIndicator() {
       {showScrollBottom && (
         <button
           onClick={scrollDownOneScreen}
-          className="ron-circle-btn !w-10 !h-10 bg-white/90 backdrop-blur-md shadow-lg border border-slate-200 text-[#0E151B] hover:bg-[#0E151B] hover:text-white transition-all duration-300 animate-bounce group"
+          className="ron-circle-btn !w-10 !h-10 bg-white/90 backdrop-blur-md shadow-lg border border-slate-200 text-[#0E151B] hover:bg-[#0E151B] hover:text-white transition-all duration-300 group"
           aria-label="Scroll down one screen"
           title="Scroll Down"
         >
-          <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+          <MaterialIcon name="expand_more" size={20} className="group-hover:translate-y-0.5 transition-transform" />
         </button>
       )}
     </div>

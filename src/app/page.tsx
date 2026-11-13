@@ -1,46 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Users,
-  CreditCard,
-  Clock,
-  Calendar,
-  FolderKanban,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  Layers,
-  Smartphone,
-  ShieldCheck,
-  Zap,
-  FileCheck,
-  Lock,
-  ChevronRight,
-  Play,
-  Star,
-  Check,
-  TrendingUp,
-  Headphones,
-  Phone,
-  MessageSquare,
-  MapPin,
-  Building,
-  Target,
-  BarChart3,
-  PieChart,
-  Lightbulb,
-  Rocket,
-  Shield,
-  LifeBuoy,
-  ArrowLeftRight,
-  FileText,
-  SlidersHorizontal,
-  Settings,
-  Activity,
-  Cpu,
-  Bot,
-} from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
+import { GooglePlayIcon, AppleIcon, WhatsAppIcon, ExcelIcon, WordIcon, PdfIcon } from "@/components/BrandIcons";
 import DemoRequestForm from "@/components/DemoRequestForm";
 import FAQSection from "@/components/FAQSection";
 import IndustryHorizontalScroll from "@/components/IndustryHorizontalScroll";
@@ -130,6 +92,12 @@ export default function HomePage() {
       tag: "Talent Acquisition",
     },
     {
+      title: "Client Resume Builder",
+      desc: "Take an employee's existing profile, tailor it to one client's requirement, and download a formatted resume — without retyping or reformatting anything.",
+      href: "/resume-builder",
+      tag: "CV Tailoring",
+    },
+    {
       title: "Performance Management",
       desc: "Continuous feedback, 360-degree appraisal cycles, customized KPI scorecards, and automated increment calculation.",
       href: "/performance-management-software",
@@ -212,7 +180,7 @@ export default function HomePage() {
             <Link href="#contact-form" className="ron-pill-dark w-full sm:w-auto !py-3.5 !px-7 text-sm justify-center group">
               <span>Get a Live Demo</span>
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <MaterialIcon name="arrow_forward" size={16} weight={300} className="text-white" />
               </div>
             </Link>
             <Link href="/pricing" className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm justify-center bg-white border border-slate-200/80 shadow-xs">
@@ -228,8 +196,8 @@ export default function HomePage() {
               "Direct API Sync With Biometric Turnstiles",
               "Bank-Grade 256-Bit Data Security",
             ].map((text) => (
-              <span key={text} className="flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-[#087E8B] stroke-[3]" />
+              <span key={text} className="flex items-center gap-2">
+                <MaterialIcon name="check" size={20} weight={300} className="text-[#087E8B]" />
                 {text}
               </span>
             ))}
@@ -369,49 +337,48 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {[
               {
-                icon: BarChart3,
+                iconName: "tune",
                 iconColor: "text-indigo-500",
                 iconBg: "bg-indigo-50/80 ring-8 ring-indigo-50/50",
                 title: "Built for Your Workflow",
                 desc: "Personalize attendance, payroll, shift rules, and task flows to align directly with your internal processes.",
               },
               {
-                icon: PieChart,
+                iconName: "sync_alt",
                 iconColor: "text-sky-500",
                 iconBg: "bg-sky-50/80 ring-8 ring-sky-50/50",
                 title: "Fully Synced HR Processes",
                 desc: "Attendance, payroll, projects, tasks, invoices, and assets sync automatically across web and mobile platforms.",
               },
               {
-                icon: Users,
+                iconName: "groups",
                 iconColor: "text-rose-500",
                 iconBg: "bg-rose-50/80 ring-8 ring-rose-50/50",
                 title: "Customer-Centric Experience",
                 desc: "Built for your team, with flexible features that adapt to the exact way your people collaborate and work every day.",
               },
               {
-                icon: Lightbulb,
+                iconName: "lightbulb",
                 iconColor: "text-emerald-500",
                 iconBg: "bg-emerald-50/80 ring-8 ring-emerald-50/50",
                 title: "Simple, Modern UI/UX",
                 desc: "An intuitive, clutter-free interface your HR administrators and managers can start using instantly without training.",
               },
               {
-                icon: Rocket,
+                iconName: "rocket_launch",
                 iconColor: "text-amber-500",
                 iconBg: "bg-amber-50/80 ring-8 ring-amber-50/50",
                 title: "AI-Powered HR Automation",
                 desc: "Smart AI automation that simplifies daily tasks, workload balancing, and enhances decision accuracy in seconds.",
               },
               {
-                icon: Shield,
+                iconName: "verified_user",
                 iconColor: "text-indigo-600",
                 iconBg: "bg-indigo-50/80 ring-8 ring-indigo-50/50",
                 title: "High Efficiency, Zero Hassle",
                 desc: "A streamlined cloud platform that speeds up your HR operations while keeping statutory calculations 100% error-free.",
               },
             ].map((item, idx) => {
-              const Icon = item.icon;
               return (
                 <div
                   key={idx}
@@ -421,9 +388,9 @@ export default function HomePage() {
                     {/* Soft glowing icon circle inspired by reference image */}
                     <div className="mb-6">
                       <div
-                        className={`w-13 h-13 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
+                        className={`w-15 h-15 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-xs ${item.iconBg}`}
                       >
-                        <Icon className={`w-6 h-6 stroke-[1.8] ${item.iconColor}`} />
+                        <MaterialIcon name={item.iconName} size={30} weight={300} className={item.iconColor} />
                       </div>
                     </div>
 
@@ -476,14 +443,14 @@ export default function HomePage() {
                   <div className="relative z-10 flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
                     {/* Left node stack */}
                     <div className="flex flex-col gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center text-blue-600 font-bold text-xs">
-                        W
+                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center">
+                        <WordIcon size={26} />
                       </div>
-                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center text-emerald-600 font-bold text-xs">
-                        X
+                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center">
+                        <ExcelIcon size={26} />
                       </div>
-                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center text-rose-600 font-bold text-xs">
-                        PDF
+                      <div className="w-10 h-10 rounded-2xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center">
+                        <PdfIcon size={26} />
                       </div>
                     </div>
 
@@ -492,8 +459,8 @@ export default function HomePage() {
 
                     {/* Central Glowing Capsule Pill: "Reading Data..." */}
                     <div className="px-5 py-3 rounded-full bg-white shadow-[0_10px_25px_-5px_rgba(168,85,247,0.25)] border-2 border-purple-200 flex items-center gap-3 animate-pulse">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 text-white flex items-center justify-center text-xs shadow-sm">
-                        <Sparkles className="w-3.5 h-3.5" />
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 text-white flex items-center justify-center text-xs shadow-sm">
+                        <MaterialIcon name="auto_awesome" size={18} className="text-white" />
                       </div>
                       <span className="text-xs sm:text-sm font-bold text-[#0E151B]">
                         Processing Biometric & Tax Data...
@@ -521,8 +488,8 @@ export default function HomePage() {
                 {/* Card Title & Description split */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#EEF3F2] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#0E151B]">
-                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <div className="w-10 h-10 rounded-2xl bg-[#EEF3F2] flex items-center justify-center flex-shrink-0 mt-0.5 text-[#0E151B]">
+                      <MaterialIcon name="verified_user" size={24} className="text-emerald-600" />
                     </div>
                     <div>
                       <h3 className="font-black text-lg text-[#0E151B] tracking-tight">
@@ -537,7 +504,7 @@ export default function HomePage() {
                     href="/employee-management-software"
                     className="ron-circle-btn flex-shrink-0 group-hover:bg-[#0E151B] group-hover:text-white"
                   >
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <MaterialIcon name="arrow_forward" size={16} />
                   </Link>
                 </div>
               </div>
@@ -559,8 +526,8 @@ export default function HomePage() {
                     {/* Bot greeting capsule */}
                     <div className="p-3 rounded-xl bg-orange-50/90 border border-orange-200/70 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-orange-500 text-white flex items-center justify-center">
-                          <Zap className="w-3 h-3" />
+                        <div className="w-7 h-7 rounded-full bg-orange-500 text-white flex items-center justify-center">
+                          <MaterialIcon name="bolt" size={16} className="text-white" />
                         </div>
                         <span className="text-xs font-bold text-slate-800">Shift Roster Balanced</span>
                       </div>
@@ -573,14 +540,14 @@ export default function HomePage() {
 
                   <div>
                     <div className="flex items-center gap-2.5 mb-1.5">
-                      <div className="w-7 h-7 rounded-full bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
-                        <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                      <div className="w-9 h-9 rounded-2xl bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
+                        <MaterialIcon name="auto_awesome" size={20} className="text-purple-600" />
                       </div>
                       <h4 className="font-bold text-base text-[#0E151B]">
                         AI Workforce Assistance
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-500 leading-relaxed pl-9">
+                    <p className="text-xs text-slate-500 leading-relaxed pl-11">
                       Ask natural language questions and generate roster allocations in seconds.
                     </p>
                   </div>
@@ -604,22 +571,22 @@ export default function HomePage() {
                       </div>
                     </div>
                     {/* Floating pill badge */}
-                    <div className="absolute -bottom-2 -right-1 px-3 py-1 rounded-full bg-orange-500 text-white text-[10px] font-bold shadow-md flex items-center gap-1">
-                      <Clock className="w-2.5 h-2.5" />
+                    <div className="absolute -bottom-2 -right-1 px-3 py-1 rounded-full bg-orange-500 text-white text-[10px] font-bold shadow-md flex items-center gap-1.5">
+                      <MaterialIcon name="schedule" size={14} className="text-white" />
                       <span>Payroll Due</span>
                     </div>
                   </div>
 
                   <div>
                     <div className="flex items-center gap-2.5 mb-1.5">
-                      <div className="w-7 h-7 rounded-full bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
-                        <Clock className="w-3.5 h-3.5 text-orange-600" />
+                      <div className="w-9 h-9 rounded-2xl bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
+                        <MaterialIcon name="schedule" size={20} className="text-orange-600" />
                       </div>
                       <h4 className="font-bold text-base text-[#0E151B]">
                         Automated Roster Alerts
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-500 leading-relaxed pl-9">
+                    <p className="text-xs text-slate-500 leading-relaxed pl-11">
                       Never miss a compliance deadline with automated reminders for PF, ESI & TDS filings.
                     </p>
                   </div>
@@ -659,7 +626,7 @@ export default function HomePage() {
                     {/* Glowing Search Pill: "Searching..." */}
                     <div className="py-3 px-6 rounded-full bg-white shadow-[0_8px_20px_rgba(244,63,94,0.18)] border-2 border-rose-200/80 flex items-center justify-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-rose-500 to-orange-400 text-white flex items-center justify-center">
-                        <Sparkles className="w-3 h-3" />
+                        <MaterialIcon name="auto_awesome" size={14} className="text-white" />
                       </div>
                       <span className="text-xs sm:text-sm font-bold text-[#0E151B]">
                         Reconciling TDS Slabs...
@@ -691,23 +658,23 @@ export default function HomePage() {
                 {/* Tall Card Footer Info */}
                 <div className="pt-6 border-t border-slate-100 mt-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
-                      <FileCheck className="w-4 h-4 text-emerald-600" />
+                    <div className="w-10 h-10 rounded-2xl bg-[#EEF3F2] flex items-center justify-center text-[#0E151B]">
+                      <MaterialIcon name="fact_check" size={24} className="text-emerald-600" />
                     </div>
                     <h3 className="font-black text-lg text-[#0E151B] tracking-tight">
                       Statutory Compliance & Tax Automation
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed pl-11">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed pl-13">
                     Automatically extract, compute, and generate filing-ready challans for Indian tax bodies with 100% audit protection.
                   </p>
-                  <div className="pl-11 mt-4">
+                  <div className="pl-13 mt-4">
                     <Link
                       href="/payroll-software"
                       className="inline-flex items-center gap-2 text-xs font-bold text-[#087E8B] hover:text-[#0E151B] transition-colors"
                     >
                       <span>Explore Statutory Engine</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <MaterialIcon name="arrow_forward" size={16} />
                     </Link>
                   </div>
                 </div>
@@ -715,6 +682,145 @@ export default function HomePage() {
               </div>
             </div>
 
+          </div>
+
+          {/* ── CLIENT RESUME BUILDER ────────────── */}
+          <div className="mt-8 rounded-[32px] p-7 sm:p-10 bg-gradient-to-br from-white via-[#F8FAFC] to-[#F1F5F4] border border-[#087E8B]/20 shadow-[0_20px_50px_-20px_rgba(8,126,139,0.12)] relative overflow-hidden group">
+            {/* Ambient subtle glow orb */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-to-br from-[#087E8B]/10 via-[#19B5A5]/15 to-transparent blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              {/* Left Content Column */}
+              <div className="lg:col-span-7 space-y-5 text-left">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs font-bold text-[#087E8B] bg-[#087E8B]/10 px-3 py-1 rounded-full border border-[#087E8B]/20">
+                    Live Web App
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E151B] tracking-tight">
+                    Resume Builder
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3">
+                    Take an employee&apos;s existing profile, tailor it to one client&apos;s requirement, and download a formatted resume — without retyping or reformatting anything.
+                  </p>
+                </div>
+
+                {/* 3 Core Highlights (exact match to reference design) */}
+                <div className="space-y-4 pt-1">
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex items-center justify-center text-blue-600 shrink-0">
+                      <MaterialIcon name="contact_page" size={24} weight={300} />
+                    </div>
+                    <div>
+                      <h5 className="text-sm sm:text-base font-bold text-[#0E151B]">Client-specific resumes</h5>
+                      <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
+                        Each resume holds its own copy of the profile, so editing one never touches the employee master or another client&apos;s version.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex items-center justify-center text-blue-600 shrink-0">
+                      <MaterialIcon name="layers" size={24} weight={300} />
+                    </div>
+                    <div>
+                      <h5 className="text-sm sm:text-base font-bold text-[#0E151B]">Reusable master libraries</h5>
+                      <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
+                        Skills, projects and summary blocks are curated once, then pulled into any resume.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex items-center justify-center text-blue-600 shrink-0">
+                      <MaterialIcon name="view_quilt" size={24} weight={300} />
+                    </div>
+                    <div>
+                      <h5 className="text-sm sm:text-base font-bold text-[#0E151B]">Versioned templates</h5>
+                      <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
+                        A resume stays locked to the template version it was approved under, even after a newer one is activated.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action Links */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    href="/resume-builder"
+                    className="ron-pill-dark text-xs !py-3 !px-5 inline-flex items-center gap-2 group/btn"
+                  >
+                    <span>Explore Feature Details</span>
+                    <MaterialIcon name="arrow_forward" size={16} weight={300} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                  </Link>
+
+                  <a
+                    href="https://resume-builder-naveenshenlls-projects.vercel.app/resumes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ron-pill-light text-xs !py-3 !px-5 bg-white text-[#087E8B] border border-[#087E8B]/30 hover:bg-[#087E8B]/10 font-bold inline-flex items-center gap-1.5 transition-all shadow-2xs"
+                  >
+                    <span>Launch Live App</span>
+                    <MaterialIcon name="north_east" size={16} weight={300} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Visual Interactive Mockup Card */}
+              <div className="lg:col-span-5">
+                <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-lg relative overflow-hidden">
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-xs font-bold text-[#0E151B]">Live Profile Preview</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+                        <WordIcon size={14} /> DOCX
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+                        <PdfIcon size={14} /> PDF
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                      <div className="w-10 h-10 rounded-full bg-[#087E8B]/15 text-[#087E8B] flex items-center justify-center font-bold text-xs flex-shrink-0">
+                        AK
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="text-xs font-bold text-[#0E151B] truncate">Arun Kumar — Senior Full-Stack Lead</h5>
+                        <p className="text-[11px] text-slate-500 truncate">Client Version: Tier-1 US Banking RFP</p>
+                      </div>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 flex-shrink-0">
+                        Locked v2.1
+                      </span>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-left">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Master Library Blocks Pulled</span>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {["Next.js", "TypeScript", "Node.js Microservices", "AWS Cloud", "FinTech Compliance"].map((skill, sIdx) => (
+                          <span key={sIdx} className="text-[10px] font-semibold text-slate-700 bg-white px-2 py-0.5 rounded-md border border-slate-200">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-teal-50/70 border border-teal-100 text-left flex items-start gap-2.5">
+                      <MaterialIcon name="verified_user" size={16} className="text-[#087E8B] flex-shrink-0 mt-0.5" />
+                      <p className="text-[11px] text-slate-600 leading-tight">
+                        <strong className="text-[#087E8B]">Master Integrity Guaranteed:</strong> Editing this resume will never mutate the central HRMS employee master or other client versions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Quick-Access Module Pill Strip */}
@@ -742,8 +848,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/20 backdrop-blur-md border border-[#087E8B]/40 text-[#19B5A5] text-xs font-semibold tracking-normal mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#19B5A5]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#087E8B]/20 backdrop-blur-md border border-[#087E8B]/40 text-[#19B5A5] text-xs font-semibold tracking-normal mb-3">
+              <MaterialIcon name="auto_awesome" size={18} className="text-[#19B5A5]" />
               <span>Shenll HRMS AI Intelligence</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white mt-3 leading-tight tracking-tight">
@@ -769,7 +875,7 @@ export default function HomePage() {
                   <div className="w-28 h-24 rounded-2xl bg-gradient-to-br from-[#087E8B] to-[#0D2E40] p-3 shadow-xl shadow-[#04121A] border border-[#19B5A5]/40 flex flex-col justify-between group-hover:scale-105 transition-transform">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <Users className="w-4 h-4 text-[#19B5A5]" />
+                        <MaterialIcon name="groups" size={20} className="text-[#19B5A5]" />
                         <span className="text-[10px] font-bold text-white tracking-wide">Roster AI</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-[#19B5A5] animate-ping" />
@@ -826,8 +932,8 @@ export default function HomePage() {
                   {/* Central Orchestrator Core */}
                   <div className="relative w-20 h-20 rounded-full bg-gradient-to-tr from-[#087E8B] to-[#19B5A5] p-0.5 shadow-lg shadow-[#04121A] flex items-center justify-center">
                     <div className="w-full h-full rounded-full border-4 border-dashed border-teal-200/40 animate-[spin_20s_linear_infinite] flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-[#0E2836] flex items-center justify-center">
-                        <Sparkles className="w-5 h-5 text-[#19B5A5]" />
+                      <div className="w-12 h-12 rounded-full bg-[#0E2836] flex items-center justify-center">
+                        <MaterialIcon name="auto_awesome" size={24} className="text-[#19B5A5]" />
                       </div>
                     </div>
                   </div>
@@ -911,9 +1017,9 @@ export default function HomePage() {
               <div className="relative h-44 rounded-2xl bg-gradient-to-b from-[#087E8B]/20 to-transparent border border-[#087E8B]/30 overflow-hidden flex items-center justify-center p-4 mb-6">
                 <div className="relative w-full h-full flex flex-col items-center justify-center">
                   {/* Central Agent Controller Node */}
-                  <div className="relative z-10 w-12 h-12 rounded-full bg-[#087E8B]/30 flex items-center justify-center mb-1">
+                  <div className="relative z-10 w-14 h-14 rounded-full bg-[#087E8B]/30 flex items-center justify-center mb-1 shadow-md">
                     <div className="absolute inset-0 bg-[#19B5A5]/30 rounded-full blur-md" />
-                    <Bot className="w-6 h-6 text-[#19B5A5] relative z-10" />
+                    <MaterialIcon name="smart_toy" size={30} className="text-[#19B5A5] relative z-10" />
                   </div>
 
                   {/* Multi-Agent Department Connectors */}
@@ -925,32 +1031,32 @@ export default function HomePage() {
 
                     {/* Agent 1: HR Policy Bot */}
                     <div className="flex flex-col items-center gap-1 z-10 hover:scale-110 transition-transform">
-                      <div className="w-8 h-8 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
-                        <Layers className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
+                        <MaterialIcon name="layers" size={20} />
                       </div>
                       <span className="text-[9px] font-medium text-slate-300">Policy Bot</span>
                     </div>
 
                     {/* Agent 2: Payroll Bot */}
                     <div className="flex flex-col items-center gap-1 z-10 hover:scale-110 transition-transform">
-                      <div className="w-8 h-8 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
-                        <Zap className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
+                        <MaterialIcon name="bolt" size={20} />
                       </div>
                       <span className="text-[9px] font-medium text-slate-300">Payroll Bot</span>
                     </div>
 
                     {/* Agent 3: Compliance Bot */}
                     <div className="flex flex-col items-center gap-1 z-10 hover:scale-110 transition-transform">
-                      <div className="w-8 h-8 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
-                        <Cpu className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
+                        <MaterialIcon name="memory" size={20} />
                       </div>
                       <span className="text-[9px] font-medium text-slate-300">Audit Bot</span>
                     </div>
 
                     {/* Agent 4: Helpdesk Bot */}
                     <div className="flex flex-col items-center gap-1 z-10 hover:scale-110 transition-transform">
-                      <div className="w-8 h-8 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
-                        <Sparkles className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-full bg-[#091F2C] border border-[#087E8B]/50 flex items-center justify-center text-[#19B5A5] shadow-sm">
+                        <MaterialIcon name="auto_awesome" size={20} />
                       </div>
                       <span className="text-[9px] font-medium text-slate-300">Helpdesk</span>
                     </div>
@@ -974,21 +1080,18 @@ export default function HomePage() {
               <div className="relative h-44 rounded-2xl bg-gradient-to-b from-[#087E8B]/20 to-transparent border border-[#087E8B]/30 overflow-hidden flex items-center justify-center p-3 mb-6">
                 <div className="w-full max-w-md flex items-center justify-center gap-4">
                   
-                  {/* Left Column: Word (W), Excel (X), PDF (PDF) Squircles matching attached image */}
+                  {/* Left Column: Word, Excel, PDF vector brand icons */}
                   <div className="flex flex-col gap-2 shrink-0">
-                    {/* Word Squircle */}
-                    <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
-                      <span className="text-sm font-black text-blue-600 font-sans tracking-tight">W</span>
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
+                      <WordIcon size={30} />
                     </div>
 
-                    {/* Excel Squircle */}
-                    <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
-                      <span className="text-sm font-black text-emerald-600 font-sans tracking-tight">X</span>
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
+                      <ExcelIcon size={30} />
                     </div>
 
-                    {/* PDF Squircle */}
-                    <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
-                      <span className="text-[11px] font-black text-rose-600 font-sans tracking-tighter">PDF</span>
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_12px_rgba(0,0,0,0.18)] flex items-center justify-center transition-transform hover:scale-110">
+                      <PdfIcon size={30} />
                     </div>
                   </div>
 
@@ -999,7 +1102,7 @@ export default function HomePage() {
                   <div className="flex-1 flex flex-col gap-2 min-w-0">
                     {/* Natural Language Prompt Pill */}
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#091F2C] border border-[#087E8B]/50 shadow-md">
-                      <Sparkles className="w-3.5 h-3.5 text-[#19B5A5] shrink-0" />
+                      <MaterialIcon name="auto_awesome" size={18} className="text-[#19B5A5] shrink-0" />
                       <span className="text-[10px] text-slate-200 truncate font-mono">
                         &quot;Export payroll variance summary&quot;
                       </span>
@@ -1008,8 +1111,8 @@ export default function HomePage() {
                     {/* Generated Report Preview Card */}
                     <div className="rounded-xl bg-gradient-to-r from-[#087E8B]/30 to-[#19B5A5]/20 border border-[#19B5A5]/40 p-2.5 flex items-center justify-between">
                       <div className="flex items-center gap-2 min-w-0">
-                        <div className="w-7 h-7 rounded-lg bg-[#19B5A5]/20 flex items-center justify-center text-[#19B5A5] shrink-0">
-                          <CheckCircle2 className="w-4 h-4" />
+                        <div className="w-8 h-8 rounded-lg bg-[#19B5A5]/20 flex items-center justify-center text-[#19B5A5] shrink-0">
+                          <MaterialIcon name="check_circle" size={20} />
                         </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-bold text-white truncate">Q3_Payroll_Audit.xlsx</div>
@@ -1069,8 +1172,8 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 pt-2">
                 {/* Feature 1 */}
                 <div className="space-y-3 group cursor-default">
-                  <div className="w-12 h-12 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
-                    <ArrowLeftRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-180" />
+                  <div className="w-14 h-14 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
+                    <MaterialIcon name="sync_alt" size={26} className="transition-transform duration-300 group-hover:rotate-180 text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#087E8B] transition-colors tracking-tight">
@@ -1084,8 +1187,8 @@ export default function HomePage() {
 
                 {/* Feature 2 */}
                 <div className="space-y-3 group cursor-default">
-                  <div className="w-12 h-12 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
-                    <Smartphone className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  <div className="w-14 h-14 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
+                    <MaterialIcon name="smartphone" size={26} className="transition-transform duration-300 group-hover:scale-110 text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#087E8B] transition-colors tracking-tight">
@@ -1099,8 +1202,8 @@ export default function HomePage() {
 
                 {/* Feature 3 */}
                 <div className="space-y-3 group cursor-default">
-                  <div className="w-12 h-12 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
-                    <Headphones className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                  <div className="w-14 h-14 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
+                    <MaterialIcon name="support_agent" size={26} className="transition-transform duration-300 group-hover:rotate-12 text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#087E8B] transition-colors tracking-tight">
@@ -1114,8 +1217,8 @@ export default function HomePage() {
 
                 {/* Feature 4 */}
                 <div className="space-y-3 group cursor-default">
-                  <div className="w-12 h-12 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
-                    <FileText className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                  <div className="w-14 h-14 rounded-full bg-[#087E8B] group-hover:bg-[#0D2E40] flex items-center justify-center text-white shadow-md shadow-[#087E8B]/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#087E8B]/35 transition-all duration-300">
+                    <MaterialIcon name="description" size={26} className="transition-transform duration-300 group-hover:-translate-y-0.5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#087E8B] transition-colors tracking-tight">
@@ -1134,9 +1237,9 @@ export default function HomePage() {
                   href="https://play.google.com/store/apps/details?id=com.sts.stshrms&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0D2E40] text-white hover:bg-[#087E8B] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0D2E40] text-white hover:bg-[#087E8B] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
                 >
-                  <Image src="/google-play-brand.svg" alt="Google Play Store" width={22} height={22} className="object-contain" />
+                  <GooglePlayIcon size={24} className="group-hover:scale-110 transition-transform" />
                   <div className="text-left">
                     <p className="text-[10px] uppercase font-semibold text-slate-300 leading-none">GET IT ON</p>
                     <p className="text-sm font-bold leading-tight mt-0.5">Google Play</p>
@@ -1146,9 +1249,9 @@ export default function HomePage() {
                   href="https://apps.apple.com/ie/app/shenll-hrms/id6757430801"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0D2E40] text-white hover:bg-[#087E8B] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0D2E40] text-white hover:bg-[#087E8B] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
                 >
-                  <Image src="/apple-brand.svg" alt="Apple App Store" width={22} height={22} className="object-contain brightness-0 invert" />
+                  <AppleIcon size={24} className="text-white group-hover:scale-110 transition-transform" />
                   <div className="text-left">
                     <p className="text-[10px] uppercase font-semibold text-slate-300 leading-none">Download on the</p>
                     <p className="text-sm font-bold leading-tight mt-0.5">App Store</p>
@@ -1265,7 +1368,7 @@ export default function HomePage() {
                     <p className="text-[11px] font-bold uppercase tracking-wider text-[#0D2E40]">What&apos;s included:</p>
                     {plan.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <Check className="w-4 h-4 text-[#087E8B] shrink-0 mt-0.5 stroke-[2.5]" />
+                        <MaterialIcon name="check" size={20} weight={300} className="text-[#087E8B] shrink-0 mt-0.5" />
                         <span className="leading-snug">{feature}</span>
                       </div>
                     ))}
@@ -1376,7 +1479,7 @@ export default function HomePage() {
                 <div className="p-5 rounded-2xl bg-[#F8FAFC] border border-slate-100 flex flex-col gap-2.5 min-h-[220px] justify-center">
                   {/* Search prompt */}
                   <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-slate-200/80 text-xs font-semibold text-slate-600 shadow-xs mb-1">
-                    <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                    <MaterialIcon name="auto_awesome" size={14} className="text-purple-600" />
                     <span>Configuring active modules...</span>
                   </div>
 
@@ -1392,7 +1495,7 @@ export default function HomePage() {
                           0{idx + 1}
                         </div>
                         <span className="text-xs font-bold text-slate-800">{item.name}</span>
-                        {item.verified && <CheckCircle2 className="w-3.5 h-3.5 text-blue-500" />}
+                        {item.verified && <MaterialIcon name="check_circle" size={14} className="text-blue-500" />}
                       </div>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${item.color}`}>
                         {item.tag}
@@ -1450,9 +1553,9 @@ export default function HomePage() {
                   </div>
 
                   {/* Congratulations Toast Pill */}
-                  <div className="px-4 py-2 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center gap-2 z-20 mt-1">
-                    <div className="w-5 h-5 rounded-md bg-blue-600 text-white flex items-center justify-center">
-                      <Check className="w-3 h-3 stroke-[3]" />
+                  <div className="px-4 py-2 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center gap-2.5 z-20 mt-1">
+                    <div className="w-6 h-6 rounded-md bg-blue-600 text-white flex items-center justify-center">
+                      <MaterialIcon name="check" size={16} weight={300} />
                     </div>
                     <div>
                       <p className="text-[11px] font-black text-slate-800 leading-tight">Congratulations!</p>
@@ -1483,7 +1586,7 @@ export default function HomePage() {
             >
               <span>Book Your 48-Hour Implementation</span>
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <MaterialIcon name="arrow_forward" size={16} weight={300} className="text-white" />
               </div>
             </Link>
           </div>
@@ -1523,8 +1626,8 @@ export default function HomePage() {
                   "Dedicated onboarding specialist and 48-hour data go-live",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm text-slate-100">
-                    <div className="w-5 h-5 rounded-full bg-[#19B5A5]/20 text-[#19B5A5] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#19B5A5]/30">
-                      <Check className="w-3 h-3 stroke-[3]" />
+                    <div className="w-6 h-6 rounded-full bg-[#19B5A5]/20 text-[#19B5A5] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#19B5A5]/30 shadow-xs">
+                      <MaterialIcon name="check" size={18} weight={300} />
                     </div>
                     <span className="leading-snug">{item}</span>
                   </div>
@@ -1535,8 +1638,8 @@ export default function HomePage() {
               <div className="pt-6 border-t border-white/15">
                 <div className="p-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-2xl bg-[#F59E0B] text-white flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#F59E0B] text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                      <MaterialIcon name="support_agent" size={28} className="text-white" />
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-slate-300 font-bold">Direct Sales Helpline</p>
@@ -1551,12 +1654,12 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-md hover:shadow-lg"
                   >
-                    <Image src="/whatsapp-icon.svg" alt="WhatsApp" width={18} height={18} className="brightness-0 invert" />
+                    <WhatsAppIcon size={20} />
                     <span>WhatsApp</span>
                   </a>
                 </div>
                 <p className="text-xs text-slate-300 mt-3 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                  <MaterialIcon name="location_on" size={18} className="text-slate-400" />
                   Shenll HQ · Plot No.1069, Munusamy Salai, K.K Nagar, Chennai
                 </p>
               </div>

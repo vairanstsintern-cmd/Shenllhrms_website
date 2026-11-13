@@ -3,18 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  X,
-  Send,
-  RotateCcw,
-  Maximize2,
-  Minimize2,
-  Sparkles,
-  Phone,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-} from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
+import { WhatsAppIcon } from "@/components/BrandIcons";
 
 interface ChatMessage {
   id: string;
@@ -286,7 +276,7 @@ export default function FloatingAIChatbot() {
                 title="Restart conversation"
                 aria-label="Restart conversation"
               >
-                <RotateCcw className="w-[18px] h-[18px]" />
+                <MaterialIcon name="refresh" size={18} />
               </button>
 
               <button
@@ -296,9 +286,9 @@ export default function FloatingAIChatbot() {
                 aria-label={isExpanded ? "Collapse view" : "Expand view"}
               >
                 {isExpanded ? (
-                  <Minimize2 className="w-[18px] h-[18px]" />
+                  <MaterialIcon name="close_fullscreen" size={18} />
                 ) : (
-                  <Maximize2 className="w-[18px] h-[18px]" />
+                  <MaterialIcon name="open_in_full" size={18} />
                 )}
               </button>
 
@@ -308,7 +298,7 @@ export default function FloatingAIChatbot() {
                 title="Close chat"
                 aria-label="Close chat"
               >
-                <X className="w-5 h-5" />
+                <MaterialIcon name="close" size={20} />
               </button>
             </div>
           </div>
@@ -455,7 +445,7 @@ export default function FloatingAIChatbot() {
               className="w-9 h-9 rounded-full bg-gradient-to-r from-[#087E8B] to-[#19B5A5] hover:from-[#123B50] hover:to-[#087E8B] disabled:opacity-40 text-white flex items-center justify-center transition-all cursor-pointer flex-shrink-0 shadow-2xs"
               aria-label="Send message"
             >
-              <Send className="w-4 h-4 ml-0.5" />
+              <MaterialIcon name="send" size={16} className="ml-0.5" />
             </button>
           </form>
 
@@ -468,12 +458,25 @@ export default function FloatingAIChatbot() {
                 Shenll HRMS AI
               </span>
             </div>
-            <a
-              href="tel:+918122046761"
-              className="text-[#087E8B] hover:text-[#123B50] hover:underline font-semibold flex items-center gap-1"
-            >
-              <Phone className="w-3 h-3 text-[#087E8B]" /> +91-8122046761
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://wa.me/918122046761?text=Hello%20Shenll%20HRMS,%20I%20have%20questions%20about%20the%20platform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#25D366] hover:text-[#1fad53] font-semibold flex items-center gap-1 transition-colors"
+                title="Chat on WhatsApp"
+              >
+                <WhatsAppIcon size={14} />
+                <span>WhatsApp</span>
+              </a>
+              <span className="text-slate-300">•</span>
+              <a
+                href="tel:+918122046761"
+                className="text-[#087E8B] hover:text-[#123B50] hover:underline font-semibold flex items-center gap-1"
+              >
+                <MaterialIcon name="call" size={13} className="text-[#087E8B]" /> Call
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -509,7 +512,7 @@ export default function FloatingAIChatbot() {
           />
 
           {isOpen ? (
-            <X className="w-6 h-6 text-white stroke-[2.5] relative z-10 transition-transform duration-200 rotate-0 hover:rotate-90" />
+            <MaterialIcon name="close" size={24} weight={300} className="text-white relative z-10 transition-transform duration-200 rotate-0 hover:rotate-90" />
           ) : (
             <div className="relative z-10 w-8 h-8 flex items-center justify-center">
               {/* Three 4-Pointed Sparkle Stars in Pure White */}

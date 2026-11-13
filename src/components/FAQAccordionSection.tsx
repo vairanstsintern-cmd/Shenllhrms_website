@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 interface FAQAccordionSectionProps {
   badge?: string;
@@ -74,8 +74,10 @@ export default function FAQAccordionSection({
                           : "bg-[#0E151B] text-white group-hover:bg-[#087E8B] group-hover:scale-105"
                       }`}
                     >
-                      <ArrowUpRight
-                        className={`w-4 h-4 transition-transform duration-300 ${
+                      <MaterialIcon
+                        name="north_east"
+                        size={16}
+                        className={`transition-transform duration-300 ${
                           isOpen ? "rotate-90 text-white" : "rotate-0 text-white"
                         }`}
                       />

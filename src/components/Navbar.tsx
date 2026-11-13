@@ -4,26 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  ChevronDown,
-  Menu,
-  X,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  PhoneCall,
-  Laptop,
-  Users,
-  CreditCard,
-  Clock,
-  Calendar,
-  Briefcase,
-  TrendingUp,
-  FolderKanban,
-  Receipt,
-  Smartphone,
-  CheckCircle2,
-} from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import { PRODUCT_MODULES, INDUSTRY_SOLUTIONS } from "@/data/navigation";
 
 export default function Navbar() {
@@ -100,8 +81,10 @@ export default function Navbar() {
                 }`}
               >
                 <span>Modules</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                <MaterialIcon
+                  name="expand_more"
+                  size={16}
+                  className={`transition-transform duration-200 ${
                     activeDropdown === "product" ? "rotate-180 text-[#0E151B]" : ""
                   }`}
                 />
@@ -115,21 +98,31 @@ export default function Navbar() {
                         <span className="ron-badge-lime">
                           ENTERPRISE SUITE
                         </span>
-                        <span className="text-xs text-slate-400 font-medium">12 Integrated Modules</span>
+                        <span className="text-xs text-slate-400 font-medium">13 Integrated Modules</span>
                       </div>
                       <h4 className="text-sm font-bold text-[#0E151B]">
                         Unified Cloud HR, Payroll &amp; Workforce Engine
                       </h4>
                     </div>
-                    <Link
-                      href="/ai-hrms"
-                      onClick={() => setActiveDropdown(null)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#087E8B] hover:text-[#0D2E40] bg-[#087E8B]/10 hover:bg-[#087E8B]/15 px-3 py-1.5 rounded-full transition-colors"
-                    >
-                      <Sparkles className="w-3.5 h-3.5 text-[#087E8B]" />
-                      <span>AI Intelligence</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href="/resume-builder"
+                        onClick={() => setActiveDropdown(null)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#087E8B] hover:text-[#0D2E40] bg-[#087E8B]/10 hover:bg-[#087E8B]/15 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#087E8B] animate-pulse" />
+                        <span>Resume Builder</span>
+                      </Link>
+                      <Link
+                        href="/ai-hrms"
+                        onClick={() => setActiveDropdown(null)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-purple-700 hover:text-purple-900 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        <MaterialIcon name="auto_awesome" size={14} className="text-purple-600" />
+                        <span>AI Intelligence</span>
+                        <MaterialIcon name="arrow_forward" size={12} />
+                      </Link>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2.5">
@@ -170,6 +163,13 @@ export default function Navbar() {
                         color: "bg-indigo-50 text-indigo-600",
                       },
                       {
+                        name: "Client Resume Builder",
+                        subtitle: "Profile tailoring & templates",
+                        href: "/resume-builder",
+                        icon: "contact_page",
+                        color: "bg-teal-50 text-teal-600",
+                      },
+                      {
                         name: "Performance & OKR",
                         subtitle: "360-degree reviews",
                         href: "/performance-management-software",
@@ -197,25 +197,46 @@ export default function Navbar() {
                         icon: "smartphone",
                         color: "bg-teal-50 text-teal-600",
                       },
+                      {
+                        name: "AI Workforce Intelligence",
+                        subtitle: "Predictive attrition & agents",
+                        href: "/ai-hrms",
+                        icon: "auto_awesome",
+                        color: "bg-violet-50 text-violet-600",
+                      },
+                      {
+                        name: "Helpdesk & Operations",
+                        subtitle: "SLA tickets & governance",
+                        href: "/hrms-software",
+                        icon: "support_agent",
+                        color: "bg-slate-100 text-slate-700",
+                      },
                     ].map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className={`p-3 rounded-2xl border transition-all group block ${
+                        className={`p-3 rounded-2xl border transition-all group flex items-start gap-3 relative ${
                           pathname === item.href
                             ? "bg-[#087E8B]/10 border-[#087E8B]/40"
                             : "hover:bg-[#F8FAFC] border-transparent hover:border-[#E1E8F0]"
                         }`}
                       >
-                        <h5 className={`text-[13px] font-bold transition-colors leading-tight ${
-                          pathname === item.href ? "text-[#087E8B]" : "text-[#0D2E40] group-hover:text-[#087E8B]"
-                        }`}>
-                          {item.name}
-                        </h5>
-                        <p className="text-[11.5px] text-[#64748B] mt-1 leading-snug">
-                          {item.subtitle}
-                        </p>
+                        <div className={`w-10 h-10 rounded-2xl ${item.color} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xs`}>
+                          <MaterialIcon name={item.icon} size={22} weight={300} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-1.5">
+                            <h5 className={`text-[13px] font-bold transition-colors leading-tight truncate ${
+                              pathname === item.href ? "text-[#087E8B]" : "text-[#0D2E40] group-hover:text-[#087E8B]"
+                            }`}>
+                              {item.name}
+                            </h5>
+                          </div>
+                          <p className="text-[11.5px] text-[#64748B] mt-1 leading-snug">
+                            {item.subtitle}
+                          </p>
+                        </div>
                       </Link>
                     ))}
                   </div>
@@ -237,15 +258,17 @@ export default function Navbar() {
                 }`}
               >
                 <span>Industries</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                <MaterialIcon
+                  name="expand_more"
+                  size={16}
+                  className={`transition-transform duration-200 ${
                     activeDropdown === "industry" ? "rotate-180 text-[#0E151B]" : ""
                   }`}
                 />
               </button>
 
               {activeDropdown === "industry" && (
-                <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-[720px] bg-white rounded-[28px] shadow-[0_30px_70px_-15px_rgba(14,21,27,0.18)] border border-slate-200/90 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-[780px] bg-white rounded-[28px] shadow-[0_30px_70px_-15px_rgba(14,21,27,0.18)] border border-slate-200/90 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -264,30 +287,99 @@ export default function Navbar() {
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#087E8B] hover:text-[#0D2E40] bg-[#087E8B]/10 hover:bg-[#087E8B]/15 px-3 py-1.5 rounded-full transition-colors"
                     >
                       <span>View All Playbooks</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <MaterialIcon name="arrow_forward" size={12} />
                     </Link>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2.5">
-                    {INDUSTRY_SOLUTIONS.map((item) => (
+                    {[
+                      {
+                        name: "Manufacturing",
+                        subtitle: "Shift rosters & biometrics",
+                        href: "/industries/manufacturing",
+                        icon: "factory",
+                        color: "bg-amber-50 text-amber-600",
+                      },
+                      {
+                        name: "Information Tech",
+                        subtitle: "Hybrid logs & timesheets",
+                        href: "/industries/information-technology",
+                        icon: "laptop_mac",
+                        color: "bg-blue-50 text-blue-600",
+                      },
+                      {
+                        name: "Engineering & EPC",
+                        subtitle: "Field ops & multi-site",
+                        href: "/industries/engineering",
+                        icon: "construction",
+                        color: "bg-cyan-50 text-cyan-700",
+                      },
+                      {
+                        name: "Construction",
+                        subtitle: "Site labor & wage laws",
+                        href: "/industries/construction",
+                        icon: "domain",
+                        color: "bg-orange-50 text-orange-600",
+                      },
+                      {
+                        name: "Logistics & Fleet",
+                        subtitle: "Driver shifts & night bata",
+                        href: "/industries/logistics",
+                        icon: "local_shipping",
+                        color: "bg-indigo-50 text-indigo-600",
+                      },
+                      {
+                        name: "Healthcare",
+                        subtitle: "24/7 rotational rosters",
+                        href: "/industries/healthcare",
+                        icon: "local_hospital",
+                        color: "bg-rose-50 text-rose-600",
+                      },
+                      {
+                        name: "Education",
+                        subtitle: "Faculty leaves & calendar",
+                        href: "/industries/education",
+                        icon: "school",
+                        color: "bg-purple-50 text-purple-600",
+                      },
+                      {
+                        name: "Textile & Apparel",
+                        subtitle: "Piece-rate & turnstiles",
+                        href: "/industries/textile",
+                        icon: "checkroom",
+                        color: "bg-emerald-50 text-emerald-600",
+                      },
+                      {
+                        name: "Professional Services",
+                        subtitle: "Billable client hours",
+                        href: "/industries/professional-services",
+                        icon: "business_center",
+                        color: "bg-teal-50 text-teal-600",
+                      },
+                    ].map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         onClick={() => setActiveDropdown(null)}
-                        className={`p-3 rounded-2xl border transition-all group block ${
+                        className={`p-3 rounded-2xl border transition-all group flex items-start gap-3 relative ${
                           pathname === item.href
                             ? "bg-[#087E8B]/10 border-[#087E8B]/40"
                             : "hover:bg-[#F8FAFC] border-transparent hover:border-[#E1E8F0]"
                         }`}
                       >
-                        <h5 className={`text-[13px] font-bold transition-colors leading-tight mb-1 ${
-                          pathname === item.href ? "text-[#087E8B]" : "text-[#0D2E40] group-hover:text-[#087E8B]"
-                        }`}>
-                          {item.name}
-                        </h5>
-                        <p className="text-[11.5px] text-[#64748B] leading-snug line-clamp-1">
-                          {item.description}
-                        </p>
+                        <div className={`w-10 h-10 rounded-2xl ${item.color} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xs`}>
+                          <MaterialIcon name={item.icon} size={22} weight={300} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h5 className={`text-[13px] font-bold transition-colors leading-tight truncate ${
+                            pathname === item.href ? "text-[#087E8B]" : "text-[#0D2E40] group-hover:text-[#087E8B]"
+                          }`}>
+                            {item.name}
+                          </h5>
+                          <p className="text-[11.5px] text-[#64748B] mt-1 leading-snug">
+                            {item.subtitle}
+                          </p>
+                        </div>
                       </Link>
                     ))}
                   </div>
@@ -336,11 +428,11 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3">
             <Link
               href="/book-a-demo"
-              className="ron-pill-dark text-xs sm:text-sm !py-2.5 !px-5"
+              className="ron-pill-dark text-xs sm:text-sm !py-2.5 !px-5 inline-flex items-center gap-2"
             >
               <span>Book a Demo</span>
-              <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                <ArrowRight className="w-3 h-3 text-white" />
+              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                <MaterialIcon name="arrow_forward" size={15} weight={300} className="text-white" />
               </div>
             </Link>
 
@@ -350,7 +442,7 @@ export default function Navbar() {
               className="xl:hidden p-2 rounded-full text-[#0E151B] hover:bg-[#F1F5F4] transition-colors"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <MaterialIcon name="close" size={24} weight={300} /> : <MaterialIcon name="menu" size={24} weight={300} />}
             </button>
           </div>
         </div>
@@ -384,8 +476,10 @@ export default function Navbar() {
                 }`}
               >
                 <span>Modules &amp; Solutions</span>
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${
+                <MaterialIcon
+                  name="expand_more"
+                  size={20}
+                  className={`transition-transform ${
                     mobileDropdown === "product" ? "rotate-180 text-[#087E8B]" : ""
                   }`}
                 />
@@ -397,13 +491,18 @@ export default function Navbar() {
                       key={mod.name}
                       href={mod.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`block text-sm py-1.5 px-2 rounded-lg transition-colors ${
+                      className={`flex items-center justify-between text-sm py-1.5 px-2 rounded-lg transition-colors ${
                         pathname === mod.href
                           ? "text-[#087E8B] font-bold bg-[#087E8B]/10"
                           : "text-[#263746] hover:text-[#087E8B]"
                       }`}
                     >
-                      {mod.name}
+                      <span>{mod.name}</span>
+                      {mod.badge && (
+                        <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded-full bg-[#087E8B] text-white">
+                          {mod.badge}
+                        </span>
+                      )}
                     </Link>
                   ))}
                 </div>
@@ -422,8 +521,10 @@ export default function Navbar() {
                 }`}
               >
                 <span>Industry Solutions</span>
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${
+                <MaterialIcon
+                  name="expand_more"
+                  size={20}
+                  className={`transition-transform ${
                     mobileDropdown === "industry" ? "rotate-180 text-[#087E8B]" : ""
                   }`}
                 />
@@ -491,7 +592,7 @@ export default function Navbar() {
                 className="w-full flex items-center justify-center gap-2 py-3.5 text-sm font-bold text-white bg-[#087E8B] rounded-full shadow-lg"
               >
                 <span>Request a Free Live Demo</span>
-                <ArrowRight className="w-4 h-4" />
+                <MaterialIcon name="arrow_forward" size={16} />
               </Link>
             </div>
           </div>

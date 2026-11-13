@@ -58,6 +58,11 @@ export const PRODUCT_MODULES: NavItem[] = [
     href: "/hrms-mobile-app",
     description: "Native iOS & Android self-service mobile app for attendance, leaves, and payslips.",
   },
+  {
+    name: "Client Resume Builder",
+    href: "/resume-builder",
+    description: "Tailor existing employee profiles to client requirements without retyping, with reusable master libraries.",
+  },
 ];
 
 export const INDUSTRY_SOLUTIONS: NavItem[] = [

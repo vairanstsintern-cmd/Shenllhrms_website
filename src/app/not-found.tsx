@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Home, CalendarCheck } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export const metadata: Metadata = {
   title: "404 — Page Not Found | Shenll HRMS",
@@ -42,17 +42,17 @@ export default function NotFound() {
           href="/"
           className="ron-pill-dark w-full sm:w-auto !py-3.5 !px-7 text-sm justify-center group"
         >
-          <Home className="w-4 h-4 text-white" />
+          <MaterialIcon name="home" size={16} className="text-white" />
           <span>Return Home</span>
           <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-            <ArrowRight className="w-3.5 h-3.5 text-white" />
+            <MaterialIcon name="arrow_forward" size={14} className="text-white" />
           </div>
         </Link>
         <Link
           href="/book-a-demo"
           className="ron-pill-light w-full sm:w-auto !py-3.5 !px-6 text-sm justify-center bg-white border border-slate-200/80 shadow-xs"
         >
-          <CalendarCheck className="w-4 h-4 text-[#087E8B]" />
+          <MaterialIcon name="event_available" size={16} className="text-[#087E8B]" />
           <span>Book a Free Demo</span>
         </Link>
       </div>

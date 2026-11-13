@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, AlertCircle, Loader2, ArrowRight, Check, Shield, Zap, Lock } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 interface DemoFormProps {
   heading?: string;
@@ -85,7 +85,7 @@ export default function DemoRequestForm({
     return (
       <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-white/40 text-center max-w-xl mx-auto backdrop-blur-xl">
         <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-xs border border-emerald-100">
-          <CheckCircle2 className="w-8 h-8 text-emerald-600" />
+          <MaterialIcon name="check_circle" size={32} fill className="text-emerald-600" />
         </div>
         <h3 className="text-2xl font-black text-[#0D2E40] mb-2 tracking-tight">
           Demo Request Confirmed!
@@ -95,15 +95,15 @@ export default function DemoRequestForm({
         </p>
         <div className="p-4 bg-[#F8FAFC] rounded-2xl text-xs text-[#334155] text-left space-y-1.5 mb-6 border border-[#E2E8F0]">
           <p className="flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-[#087E8B]" />
+            <MaterialIcon name="check" size={15} weight={300} className="text-[#087E8B]" />
             <strong>Focus Areas:</strong> {formData.modules.join(", ") || "General Overview"}
           </p>
           <p className="flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-[#087E8B]" />
+            <MaterialIcon name="check" size={15} weight={300} className="text-[#087E8B]" />
             <strong>Team Size:</strong> {formData.employeeCount} Active Staff
           </p>
           <p className="flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-[#087E8B]" />
+            <MaterialIcon name="check" size={15} weight={300} className="text-[#087E8B]" />
             <strong>Sales Line:</strong> +91-8122046761
           </p>
         </div>
@@ -143,7 +143,7 @@ export default function DemoRequestForm({
 
       {status === "error" && (
         <div className="mb-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-rose-600" />
+          <MaterialIcon name="error" size={20} className="text-rose-600 flex-shrink-0 mt-0.5" />
           <p>{errorMessage}</p>
         </div>
       )}
@@ -248,7 +248,7 @@ export default function DemoRequestForm({
                     }`}
                 >
                   <span className="truncate">{mod.label}</span>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-[#19B5A5]" />}
+                  {isSelected && <MaterialIcon name="check" size={14} weight={300} className="text-[#19B5A5] ml-1" />}
                 </button>
               );
             })}
@@ -277,14 +277,14 @@ export default function DemoRequestForm({
         >
           {status === "loading" ? (
             <>
-              <Loader2 className="w-5 h-5 animate-spin" />
+              <MaterialIcon name="progress_activity" size={20} className="animate-spin" />
               <span>Confirming Your Slot...</span>
             </>
           ) : (
             <>
               <span>Book Your Free Live Demo</span>
               <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <MaterialIcon name="arrow_forward" size={14} className="text-white" />
               </div>
             </>
           )}
@@ -293,17 +293,17 @@ export default function DemoRequestForm({
         {/* Trust Guarantees */}
         <div className="flex items-center justify-center gap-4 text-[11px] text-slate-400 pt-2 font-medium">
           <span className="flex items-center gap-1">
-            <Lock className="w-3.5 h-3.5 text-slate-500" />
+            <MaterialIcon name="lock" size={14} className="text-slate-500" />
             100% Confidential
           </span>
           <span className="text-slate-300">•</span>
           <span className="flex items-center gap-1">
-            <Shield className="w-3.5 h-3.5 text-slate-500" />
+            <MaterialIcon name="verified_user" size={14} className="text-slate-500" />
             No Credit Card Needed
           </span>
           <span className="text-slate-300">•</span>
           <span className="flex items-center gap-1">
-            <Zap className="w-3.5 h-3.5 text-slate-500" />
+            <MaterialIcon name="bolt" size={14} className="text-slate-500" />
             Setup in 48 Hours
           </span>
         </div>

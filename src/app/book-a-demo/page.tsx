@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import DemoRequestForm from "@/components/DemoRequestForm";
-import { Check, ShieldCheck, Clock, Users, Cpu, ArrowRight, Phone } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -58,29 +58,28 @@ export default function BookADemoPage() {
                   {
                     title: "30-Minute Tailored Walkthrough",
                     desc: "Focus on your company's exact shift rotas, salary structure heads, and employee headcount.",
-                    icon: Clock,
+                    iconName: "schedule",
                   },
                   {
                     title: "Live Hardware & Biometric Sync",
                     desc: "See how turnstiles (eSSL, Matrix, ZKTeco) and GPS geo-fenced mobile punches sync automatically.",
-                    icon: Cpu,
+                    iconName: "fingerprint",
                   },
                   {
                     title: "Statutory Payroll Automation",
                     desc: "Live demonstration of PF ECR, ESI, TDS calculations, and direct corporate bank payment files.",
-                    icon: ShieldCheck,
+                    iconName: "verified_user",
                   },
                   {
                     title: "48-Hour Rapid Data Migration",
                     desc: "We explain how we bulk-import your historical records and employee documents with zero downtime.",
-                    icon: Users,
+                    iconName: "sync",
                   },
                 ].map((item, idx) => {
-                  const Icon = item.icon;
                   return (
                     <div key={idx} className="flex items-start gap-3.5">
                       <div className="w-9 h-9 rounded-xl bg-[#EEF3F2] text-[#087E8B] flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-4 h-4" />
+                        <MaterialIcon name={item.iconName} size={18} />
                       </div>
                       <div>
                         <h4 className="font-bold text-sm text-[#0E151B]">{item.title}</h4>
@@ -105,7 +104,7 @@ export default function BookADemoPage() {
                 </a>
               </div>
               <div className="w-12 h-12 rounded-2xl bg-[#087E8B]/20 border border-[#087E8B]/40 flex items-center justify-center text-[#19B5A5] shrink-0">
-                <Phone className="w-6 h-6" />
+                <MaterialIcon name="phone_in_talk" size={24} />
               </div>
             </div>
 

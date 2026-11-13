@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Building, Users, ShieldCheck, Mail, Phone, MapPin, ArrowRight, Eye, Shield, Sparkles } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
+import { WhatsAppIcon } from "@/components/BrandIcons";
 import DemoRequestForm from "@/components/DemoRequestForm";
 
 export const metadata: Metadata = {
@@ -44,28 +45,27 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: Eye,
-                iconColor: "text-emerald-500",
+                iconName: "visibility",
+                iconColor: "text-emerald-600",
                 iconBg: "bg-emerald-50/80 ring-8 ring-emerald-50/50",
                 title: "Workforce Transparency",
                 desc: "We believe employees should have instant, clear visibility into their work hours, approved leaves, and tax breakdowns right from their personal smartphone.",
               },
               {
-                icon: Shield,
-                iconColor: "text-amber-500",
+                iconName: "verified_user",
+                iconColor: "text-amber-600",
                 iconBg: "bg-amber-50/80 ring-8 ring-amber-50/50",
                 title: "Zero-Error Payroll",
                 desc: "Payroll is not just accounting—it is employee trust. We engineer every formula to guarantee 100% compliance with Indian PF, ESI, TDS, and state tax mandates.",
               },
               {
-                icon: Sparkles,
+                iconName: "auto_awesome",
                 iconColor: "text-indigo-600",
                 iconBg: "bg-indigo-50/80 ring-8 ring-indigo-50/50",
                 title: "Purposeful AI Automation",
                 desc: "We avoid vanity features. Our Adaptive Intelligence Engine focuses directly on helping HR leaders balance team workloads, predict attrition, and answer queries in natural language.",
               },
             ].map((item, idx) => {
-              const Icon = item.icon;
               return (
                 <div
                   key={idx}
@@ -77,7 +77,7 @@ export default function AboutPage() {
                       <div
                         className={`w-13 h-13 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${item.iconBg}`}
                       >
-                        <Icon className={`w-6 h-6 stroke-[1.8] ${item.iconColor}`} />
+                        <MaterialIcon name={item.iconName} size={24} className={item.iconColor} />
                       </div>
                     </div>
 
@@ -112,7 +112,7 @@ export default function AboutPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5 text-[#0E151B]">
                   <div className="w-8 h-8 rounded-xl bg-[#087E8B]/10 flex items-center justify-center">
-                    <MapPin className="w-4 h-4 text-[#087E8B]" />
+                    <MaterialIcon name="location_on" size={18} className="text-[#087E8B]" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0E151B]">Registered Office</span>
                 </div>
@@ -125,23 +125,33 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5 text-[#0E151B]">
-                  <div className="w-8 h-8 rounded-xl bg-[#087E8B]/10 flex items-center justify-center">
-                    <Phone className="w-4 h-4 text-[#087E8B]" />
+                  <div className="w-8 h-8 rounded-xl bg-[#25D366]/10 flex items-center justify-center">
+                    <WhatsAppIcon size={18} />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0E151B]">Phone & WhatsApp</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0E151B]">Phone &amp; WhatsApp</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-500">
-                  <a href="tel:+918122046761" className="hover:text-[#087E8B] font-bold text-[#0E151B]">
+                <div className="flex flex-wrap items-center gap-3">
+                  <a href="tel:+918122046761" className="hover:text-[#087E8B] font-bold text-xs sm:text-sm text-[#0E151B]">
                     +91-8122046761
                   </a>
-                </p>
+                  <a
+                    href="https://wa.me/918122046761?text=Hello%20Shenll%20HRMS,%20I%20would%20like%20to%20know%20more%20about%20your%20company"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xs"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <WhatsAppIcon size={13} />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
                 <p className="text-xs text-slate-400">Monday – Saturday (9:00 AM – 7:00 PM IST)</p>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5 text-[#0E151B]">
                   <div className="w-8 h-8 rounded-xl bg-[#087E8B]/10 flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-[#087E8B]" />
+                    <MaterialIcon name="mail" size={18} className="text-[#087E8B]" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0E151B]">Email Support</span>
                 </div>
@@ -160,7 +170,7 @@ export default function AboutPage() {
       {/* 4. Conversion CTA */}
       <section className="py-24 bg-[#0E151B] text-white relative overflow-hidden">
         {/* Subtle mesh background accent */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#9DF52A]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#19B5A5]/15 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">

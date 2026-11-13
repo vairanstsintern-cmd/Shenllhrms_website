@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 import { INDUSTRY_SOLUTIONS } from "@/data/navigation";
 
 export default function IndustryHorizontalScroll() {
@@ -28,14 +28,14 @@ export default function IndustryHorizontalScroll() {
           className="ron-circle-btn !w-10 !h-10 bg-white shadow-sm border border-slate-200 hover:bg-[#0E151B] hover:text-white transition-all cursor-pointer"
           aria-label="Scroll industry solutions left"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <MaterialIcon name="chevron_left" size={20} />
         </button>
         <button
           onClick={() => scroll("right")}
           className="ron-circle-btn !w-10 !h-10 bg-white shadow-sm border border-slate-200 hover:bg-[#0E151B] hover:text-white transition-all cursor-pointer"
           aria-label="Scroll industry solutions right"
         >
-          <ChevronRight className="w-5 h-5" />
+          <MaterialIcon name="chevron_right" size={20} />
         </button>
       </div>
 

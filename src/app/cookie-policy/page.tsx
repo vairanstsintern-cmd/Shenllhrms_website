@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cookie, ShieldCheck, Settings, Eye, FileText, ArrowRight } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
 
 export const metadata: Metadata = {
   title: "Cookie Policy — Shenll HRMS | User Consent & Preferences",
@@ -25,7 +25,6 @@ export default function CookiePolicyPage() {
         <div className="text-center mb-12">
           <div className="inline-flex mb-3">
             <span className="ron-badge-lime">
-              <Cookie className="w-3.5 h-3.5 text-[#087E8B]" />
               Transparency &amp; Privacy
             </span>
           </div>
@@ -42,7 +41,7 @@ export default function CookiePolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <Cookie className="w-4 h-4" />
+                <MaterialIcon name="cookie" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">1. What Are Cookies?</h2>
             </div>
@@ -54,7 +53,7 @@ export default function CookiePolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <ShieldCheck className="w-4 h-4" />
+                <MaterialIcon name="verified_user" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">2. Categories of Cookies We Use</h2>
             </div>
@@ -84,7 +83,7 @@ export default function CookiePolicyPage() {
           <section>
             <div className="flex items-center gap-2.5 mb-2.5">
               <div className="w-8 h-8 rounded-xl bg-[#EEF3F2] flex items-center justify-center text-[#087E8B]">
-                <Settings className="w-4 h-4" />
+                <MaterialIcon name="settings" size={18} />
               </div>
               <h2 className="text-lg font-bold text-[#0E151B]">3. Managing Your Preferences</h2>
             </div>

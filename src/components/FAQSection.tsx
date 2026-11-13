@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { HelpCircle, Headphones, Phone, ArrowRight, ChevronDown } from "lucide-react";
+import MaterialIcon from "@/components/MaterialIcon";
+import { WhatsAppIcon } from "@/components/BrandIcons";
 
 interface FAQItem {
   q: string;
@@ -79,7 +80,6 @@ export default function FAQSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="nextsaas-badge mb-4">
-            <HelpCircle className="w-3.5 h-3.5 text-[#087E8B]" />
             <span>Got Questions?</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0D2E40] tracking-tight">
@@ -116,7 +116,7 @@ export default function FAQSection() {
           <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-4">
             <div className="p-7 rounded-3xl bg-white border border-[#E1E8F0] shadow-sm relative overflow-hidden">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#087E8B] to-[#123B50] text-white flex items-center justify-center shadow-md mb-5">
-                <Headphones className="w-6 h-6 text-white" />
+                <MaterialIcon name="support_agent" size={24} className="text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#0D2E40] leading-snug">
                 Still have unanswered questions?
@@ -131,7 +131,7 @@ export default function FAQSection() {
                   className="flex items-center gap-3 p-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#087E8B] transition-all group"
                 >
                   <div className="w-9 h-9 rounded-xl bg-[#087E8B]/10 text-[#087E8B] flex items-center justify-center group-hover:bg-[#087E8B] group-hover:text-white transition-colors">
-                    <Phone className="w-4 h-4" />
+                    <MaterialIcon name="call" size={16} />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Direct Call</span>
@@ -144,9 +144,10 @@ export default function FAQSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-2xl bg-[#25D366]/5 border border-[#25D366]/20 hover:bg-[#25D366]/10 transition-all group"
+                  aria-label="Chat with WhatsApp Support"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-[#25D366] text-white flex items-center justify-center">
-                    <Image src="/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} />
+                  <div className="w-9 h-9 rounded-xl bg-[#25D366] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                    <WhatsAppIcon size={22} />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#128C7E]">Instant Chat</span>
@@ -161,7 +162,7 @@ export default function FAQSection() {
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D97706] hover:from-[#D97706] hover:to-[#B45309] shadow-sm hover:shadow transition-all"
                 >
                   <span>Schedule Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <MaterialIcon name="arrow_forward" size={16} />
                 </Link>
               </div>
             </div>
@@ -207,7 +208,7 @@ export default function FAQSection() {
                           : "bg-slate-100 text-slate-500"
                       }`}
                     >
-                      <ChevronDown className="w-4 h-4" />
+                      <MaterialIcon name="expand_more" size={18} />
                     </div>
                   </button>
 
